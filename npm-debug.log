@@ -1,0 +1,45 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'run',
+1 verbose cli   'ionic:serve',
+1 verbose cli   '--',
+1 verbose cli   '--v2',
+1 verbose cli   '--address',
+1 verbose cli   '0.0.0.0',
+1 verbose cli   '--port',
+1 verbose cli   '8101',
+1 verbose cli   '--livereload-port',
+1 verbose cli   '35730' ]
+2 info using npm@3.10.10
+3 info using node@v6.9.5
+4 verbose run-script [ 'preionic:serve', 'ionic:serve', 'postionic:serve' ]
+5 info lifecycle ionic-hello-world@~preionic:serve: ionic-hello-world@
+6 silly lifecycle ionic-hello-world@~preionic:serve: no script for preionic:serve, continuing
+7 info lifecycle ionic-hello-world@~ionic:serve: ionic-hello-world@
+8 verbose lifecycle ionic-hello-world@~ionic:serve: unsafe-perm in lifecycle true
+9 verbose lifecycle ionic-hello-world@~ionic:serve: PATH: C:\Program Files\nodejs\node_modules\npm\bin\node-gyp-bin;C:\Users\USER\Desktop\fac\pfe\codyExécutable\AuthFirebase\node_modules\.bin;C:\oraclexe\app\oracle\product\11.2.0\server\bin;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Program Files (x86)\Microsoft VS Code\bin;C:\Users\USER\AppData\Local\atom\bin;C:\Users\USER\AppData\Roaming\npm
+10 verbose lifecycle ionic-hello-world@~ionic:serve: CWD: C:\Users\USER\Desktop\fac\pfe\codyExécutable\AuthFirebase
+11 silly lifecycle ionic-hello-world@~ionic:serve: Args: [ '/d /s /c',
+11 silly lifecycle   'ionic-app-scripts serve "--v2" "--address" "0.0.0.0" "--port" "8101" "--livereload-port" "35730"' ]
+12 verbose stack Error: kill ENOSYS
+12 verbose stack     at exports._errnoException (util.js:1022:11)
+12 verbose stack     at process.kill (internal/process.js:172:13)
+12 verbose stack     at process.listener (C:\Program Files\nodejs\node_modules\npm\node_modules\npmlog\node_modules\gauge\node_modules\signal-exit\index.js:86:15)
+12 verbose stack     at emitNone (events.js:91:20)
+12 verbose stack     at process.emit (events.js:185:7)
+12 verbose stack     at processEmit (C:\Program Files\nodejs\node_modules\npm\node_modules\npmlog\node_modules\gauge\node_modules\signal-exit\index.js:146:32)
+12 verbose stack     at processEmit (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\node_modules\npmlog\node_modules\gauge\node_modules\signal-exit\index.js:146:32)
+12 verbose stack     at Signal.wrap.onsignal (internal/process.js:199:44)
+13 verbose cwd C:\Users\USER\Desktop\fac\pfe\codyExécutable\AuthFirebase
+14 error Windows_NT 6.3.9600
+15 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "run" "ionic:serve" "--" "--v2" "--address" "0.0.0.0" "--port" "8101" "--livereload-port" "35730"
+16 error node v6.9.5
+17 error npm  v3.10.10
+18 error code ENOSYS
+19 error errno ENOSYS
+20 error syscall kill
+21 error kill ENOSYS
+22 error If you need help, you may report this error at:
+22 error     <https://github.com/npm/npm/issues>
+23 verbose exit [ 1, true ]

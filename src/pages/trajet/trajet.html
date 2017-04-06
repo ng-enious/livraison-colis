@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+     <ion-title> Creation de trajet </ion-title>
+  </ion-navbar>
+
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item>
+    <ion-label stacked>Titre </ion-label>
+    <ion-input [(ngModel)]="trajetTitle" type="text" placeholder="c'est quoi le titre de votre trajet ?"></ion-input>
+  </ion-item>
+
+  
+
+ <ion-item>
+    <ion-label stacked>Adresse de départ </ion-label>
+    <ion-input [(ngModel)]="adDep" type="text" placeholder="Quell'est l'adresse de départ ?"></ion-input>
+  </ion-item>
+
+   <ion-item>
+    <ion-label stacked>Adresse d'arrivée </ion-label>
+    <ion-input [(ngModel)]="adArr" type="text" placeholder="Quell'est l'adresse d'arrivée ?"></ion-input>
+  </ion-item>
+ 
+  <ion-item>
+    <ion-label>Date </ion-label>
+    <ion-datetime displayFormat="D MMM, YY" pickerFormat="DD MMM YYYY" [(ngModel)]="date"></ion-datetime>
+  </ion-item>
+
+    <ion-item>
+    <ion-label stacked> Prix </ion-label>
+    <ion-input [(ngModel)]="prix" type="number" placeholder="Quell'est le prix propsé ?"></ion-input>
+  </ion-item>
+
+   
+  <button ion-button block (click)="createTrajet( trajetTitle  , adDep , adArr , date , prix )">
+    Create Trajet
+  </button>
+</ion-content>

@@ -1,39 +1,41 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams , LoadingController, AlertController} from 'ionic-angular';
-
+import { NavController, LoadingController, AlertController , NavParams } from 'ionic-angular';
 import { FormBuilder, Validators } from '@angular/forms';
 import { AuthData } from '../../providers/auth-data';
 import { EmailValidator } from '../../validators/email';
-import { HomePage } from '../home/home';
-
+import { Page1 } from '../page1/page1';
+import {FirebaseListObservable, AngularFire} from 'angularfire2';
 
 @Component({
   selector: 'page-signup',
   templateUrl: 'signup.html'
 })
 export class SignupPage {
-
+  
+us : FirebaseListObservable <any> ;
   public signupForm;
   loading;
 
-  constructor(public nav: NavController, public navParams: NavParams ,
+  constructor(public angFire :AngularFire , public nav: NavController, public navParams: NavParams ,
  public authData: AuthData, public formBuilder: FormBuilder,
   public loadingCtrl: LoadingController, public alertCtrl: AlertController) {
      this.signupForm = formBuilder.group({
       email: ['', Validators.compose([Validators.required, EmailValidator.isValid])],
       password: ['', Validators.compose([Validators.minLength(6), Validators.required])]
     });
+
   }
 
   signupUser(){
     if (!this.signupForm.valid){
       console.log(this.signupForm.value);
     } else {
-      this.authData.signupUser(this.signupForm.value.email,
+      this.authData.signupUser(
+        this.signupForm.value.email,
        this.signupForm.value.password)
       .then( authData => { 
          this.loading.dismiss().then(() => {
-        this.nav.setRoot(HomePage);
+        this.nav.setRoot(Page1);
       })
 } , error => {
     this.loading.dismiss().then( () => {

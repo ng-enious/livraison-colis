@@ -1,0 +1,45 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title> Creation de l'annonce </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item>
+    <ion-label stacked>Titre </ion-label>
+    <ion-input [(ngModel)]="annonceTitle" type="text" placeholder="c'est quoi le titre de votre annonce ?"></ion-input>
+  </ion-item>
+
+   <ion-item>
+    <ion-label stacked>Type d'objet </ion-label>
+    <ion-input [(ngModel)]="objectType" type="text" placeholder="c'est quoi le type de votre objet ?"></ion-input>
+  </ion-item>
+
+   <ion-item>
+    <ion-label stacked>Description </ion-label>
+    <ion-input [(ngModel)]="desc" type="text" placeholder="quelle est la description de votre annonce ?"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Date de transport </ion-label>
+    <ion-datetime displayFormat="D MMM, YY" pickerFormat="DD MMM YYYY" [(ngModel)]="TransportDate"></ion-datetime>
+  </ion-item>
+
+   <ion-item>
+    <ion-label stacked>Adresse de départ </ion-label>
+    <ion-input [(ngModel)]="adDep" type="text" placeholder="Quell'est l'adresse de départ ?"></ion-input>
+  </ion-item>
+
+   <ion-item>
+    <ion-label stacked>Adresse d'arrivée '  </ion-label>
+    <ion-input [(ngModel)]="adArr" type="text" placeholder="Quell'est l'adresse d'arrivée ?"></ion-input>
+  </ion-item>
+
+  <button ion-button block (click)="createAnnonce(annonceTitle , objectType , desc , TransportDate , adDep , adArr )">
+    Create Annonce 
+  </button>
+</ion-content>

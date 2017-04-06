@@ -19,7 +19,7 @@ fireAuth: any;
   
   }
 
- loginUser(newEmail: string, newPassword: string): firebase.Promise<any> {
+ loginUser( newEmail: string, newPassword: string): firebase.Promise<any> {
     return this.af.auth.login({
       email: newEmail,
       password: newPassword
@@ -34,12 +34,18 @@ fireAuth: any;
     return this.af.auth.logout();
   }
 
-  signupUser(newEmail: string, newPassword: string): firebase.Promise<any> {
-    return this.af.auth.createUser({ 
-      email: newEmail, 
-      password: newPassword 
+  signupUser( email: string, password: string ): firebase.Promise<any> {
+
+
+     return firebase.auth().createUserWithEmailAndPassword(email, password).then((newUser) => {
+      firebase.database().ref('/users').child(newUser.uid).set({
+        email: email
+      });
     });
   }
+
+ 
+
 
 
 

@@ -1,16 +1,17 @@
 import { Component } from '@angular/core';
 import { NavController,
    LoadingController,
-  AlertController} from 'ionic-angular';
-
+  AlertController , Platform} from 'ionic-angular';
+import {Http} from '@angular/http'; 
 import { FormBuilder, Validators } from '@angular/forms';
 import { AuthData } from '../../providers/auth-data';
 
-import { HomePage } from '../home/home';
+import { Page1 } from '../page1/page1';
+//import { ChoixPage } from '../choix/choix';
 import { SignupPage } from '../signup/signup';
 import { ResetPasswordPage } from '../reset-password/reset-password';
 import { EmailValidator } from '../../validators/email';
-
+declare var window : any ;
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html'
@@ -23,7 +24,7 @@ export class LoginPage {
 
   constructor(public navCtrl: NavController, public authData: AuthData, 
     public formBuilder: FormBuilder, public alertCtrl: AlertController,
-    public loadingCtrl: LoadingController) {
+    public loadingCtrl: LoadingController , private platform:Platform , private http :Http) {
 
       this.loginForm = formBuilder.group({
         email: ['', Validators.compose([Validators.required, EmailValidator.isValid])],
@@ -39,7 +40,7 @@ export class LoginPage {
     this.authData.loginUser(this.loginForm.value.email, 
       this.loginForm.value.password).then( authData => { 
          this.loading.dismiss().then(() => {
-        this.navCtrl.setRoot(HomePage);
+        this.navCtrl.setRoot(Page1);
   })
 } , error => {
     this.loading.dismiss().then( () => {
@@ -70,4 +71,8 @@ export class LoginPage {
     this.navCtrl.push(SignupPage);
   }
 
-}
+ 
+
+
+
+  }

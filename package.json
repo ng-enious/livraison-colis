@@ -24,7 +24,7 @@
     "@ionic-native/status-bar": "3.1.0",
     "@ionic/storage": "2.0.0",
     "angularfire2": "^2.0.0-beta.8",
-    "firebase": "^3.7.3",
+    "firebase": "^3.7.4",
     "ionic-angular": "2.3.0",
     "ionicons": "3.0.0",
     "rxjs": "5.0.1",
@@ -36,13 +36,13 @@
     "typescript": "2.0.9"
   },
   "cordovaPlugins": [
-    "cordova-plugin-statusbar",
     "cordova-plugin-whitelist",
-    "cordova-plugin-device",
-    "cordova-plugin-splashscreen",
     "cordova-plugin-console",
+    "cordova-plugin-device",
+    "cordova-plugin-statusbar",
+    "cordova-plugin-splashscreen",
     "ionic-plugin-keyboard"
   ],
   "cordovaPlatforms": [],
-  "description": "AuthFirebase: An Ionic project"
+  "description": "Cocolis: An Ionic project"
 }

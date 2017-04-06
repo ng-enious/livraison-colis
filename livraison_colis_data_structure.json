@@ -1,0 +1,86 @@
+{
+    "users": {
+        "idUser": {
+	        "username":"",    
+	        "password":"",
+	        "fullname":"",
+	        "email":"",
+	        "phone":"" , 
+			"avatar": "",
+	        "birthday":"",
+	        "reviews": {
+	            "id": {
+	                "user_id":"",
+	                "comment":"",
+	                "notes":""
+	            }
+	        }
+    	}
+    },
+    
+    "trajets": {
+        "idTrajet":{
+	        "user_id":"",
+	        "title": "",
+	        "adresse_dep":"",
+	        "adresse_arr":"",
+	        "days":"",
+	        "price": ""
+	    }
+    },
+
+    "annonces": {
+        "idAnnonce": {
+	        "user_id":"",
+	        "title": "",
+	        "type_obj":"",
+	        "adresse_dep":"",
+	        "adresse_arr":"",
+	        "date":"",
+	        "description":"",
+
+	        "demandes": {
+	        	"id": {
+	        		"trajet_id": ""
+	        	}
+	        }
+	    }
+    },
+
+    "missions": {
+        "idMission": {
+	        "trajet_id":"",
+	        "annonce_id":"",
+	        "etat":""
+	    }
+    },
+   
+    "messages": {
+        "idMessages": {
+            "id_sender":"",
+            "id_recipient":"",
+            "message":"",
+            "date":""
+        }
+    },
+
+    "stats":{
+        "idstats":{
+        	"trajets":"",
+        	"annonces":"",
+        	"missions":"",
+        	"users":""
+        }
+    },
+
+    "about":{
+        "idabout":{
+        	"text":""
+        }
+    },
+    "CGU":{
+        "idCGU":{
+        	"text":""
+        }
+    }
+}

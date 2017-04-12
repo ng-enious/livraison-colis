@@ -24546,6 +24546,13 @@ page-login .error-message .item-inner {
   border-bottom: 0 !important;
 }
 
+page-login .facebook-btn {
+  background-color: #3b5998;
+  margin: auto;
+  width: 95%;
+  margin-bottom: 5px;
+}
+
 page-reset-password form {
   margin-bottom: 32px;
 }

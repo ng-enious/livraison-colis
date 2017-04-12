@@ -31,7 +31,7 @@ export class ProfileData {
 
   updateDOB(birthDate: string): firebase.Promise<any> {
     return this.users.child(this.currentUser.uid).update({
-      birthday : birthDate,
+      birthday:birthDate,
     });
   }
 
@@ -55,6 +55,8 @@ export class ProfileData {
     return this.currentUser.reauthenticate(credential).then( user => {
       this.currentUser.updatePassword(newPassword).then( user => {
         console.log("Password Changed");
+         this.users.child(this.currentUser.uid)
+          .update({ password : newPassword  });
       }, error => {
         console.log(error);
       });

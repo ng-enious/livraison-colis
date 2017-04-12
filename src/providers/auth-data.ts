@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
-
-import { AngularFire } from 'angularfire2';
+import { Observable } from 'rxjs/Observable';
+import { Facebook } from 'ionic-native';
 import firebase from 'firebase';
-
-
+import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
+import { Platform } from 'ionic-angular';
 @Injectable()
 export class AuthData {
 fireAuth: any;
-  constructor(public http: Http ,public  af: AngularFire) {
+  constructor(public http: Http ,public  af: AngularFire , private platform: Platform) {
     af.auth.subscribe( user => {
             if (user) {
                 this.fireAuth = user.auth;
@@ -22,13 +22,16 @@ fireAuth: any;
  loginUser( newEmail: string, newPassword: string): firebase.Promise<any> {
     return this.af.auth.login({
       email: newEmail,
-      password: newPassword
+      password : newPassword
     });
   }
 
   resetPassword(email: string): firebase.Promise<any> {
     return firebase.auth().sendPasswordResetEmail(email);
   }
+ 
+ 
+   
 
   logoutUser(): firebase.Promise<any> {
     return this.af.auth.logout();
@@ -39,12 +42,48 @@ fireAuth: any;
 
      return firebase.auth().createUserWithEmailAndPassword(email, password).then((newUser) => {
       firebase.database().ref('/users').child(newUser.uid).set({
-        email: email
+        email: email ,
+        password : password
       });
     });
   }
 
- 
+ loginWithFacebook() {
+    return Observable.create(observer => {
+      if (this.platform.is('cordova')) {
+        Facebook.login(['public_profile', 'email']).then(facebookData => {
+          let provider = firebase.auth.FacebookAuthProvider.credential(facebookData.authResponse.accessToken);
+          firebase.auth().signInWithCredential(provider).then(firebaseData => {
+            this.af.database.list('users').update(firebaseData.uid, {
+              name: firebaseData.displayName,
+              email: firebaseData.email,
+              provider: 'facebook',
+              image: firebaseData.photoURL
+            });
+            observer.next();
+          });
+        }, error => {
+          observer.error(error);
+        });
+      } else {
+        this.af.auth.login({
+          provider: AuthProviders.Facebook,
+          method: AuthMethods.Popup
+        }).then((facebookData) => {
+          this.af.database.list('users').update(facebookData.auth.uid, {
+            name: facebookData.auth.displayName,
+            email: facebookData.auth.email,
+            provider: 'facebook',
+            image: facebookData.auth.photoURL
+          });
+          observer.next();
+        }).catch((error) => {
+          console.info("error", error);
+          observer.error(error);
+        });
+      }
+    });
+  }
 
 
 

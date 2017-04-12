@@ -4,13 +4,20 @@ import firebase from 'firebase';
 export class TrajetData {
   public currentUser: string;
   public trajetList: firebase.database.Reference;
- // public profilePictureRef: firebase.storage.Reference;
+
 
   constructor() {
     this.currentUser = firebase.auth().currentUser.uid;
     this.trajetList = firebase.database().ref(`trajets`);
-    //this.profilePictureRef = firebase.storage().ref('/guestProfile/');
+    
 
+  }
+
+
+
+
+  getTrajetsList(): firebase.database.Reference {
+    return this.trajetList;
   }
 
 

@@ -1,0 +1,30 @@
+<!--
+  Generated template for the MesAnnonces page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="primary" >
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+     <ion-title> Listes de mes annonces </ion-title>
+    <ion-buttons end>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let annonce of annonces" >
+      <h2>{{annonce?.title}}</h2>
+      <p>Date: <strong>{{annonce?.date}}</strong></p>
+       <p>Description : <strong>{{annonce?.description}}</strong></p>
+     <p>Adresse depart : <strong>{{annonce?.adresse_dep}}</strong></p>
+     <p>Adresse arrivée: <strong>{{annonce?.adresse_arr}}</strong></p>
+    
+    </ion-item>
+  </ion-list>
+</ion-content>
+ <!-- (click)="goToAnnonceDetail(annonce.id)" -->

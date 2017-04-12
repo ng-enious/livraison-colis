@@ -3,7 +3,7 @@ import { NavController, LoadingController, AlertController , NavParams } from 'i
 import { FormBuilder, Validators } from '@angular/forms';
 import { AuthData } from '../../providers/auth-data';
 import { EmailValidator } from '../../validators/email';
-import { Page1 } from '../page1/page1';
+import { TabsPage } from '../tabs/tabs';
 import {FirebaseListObservable, AngularFire} from 'angularfire2';
 
 @Component({
@@ -35,7 +35,7 @@ us : FirebaseListObservable <any> ;
        this.signupForm.value.password)
       .then( authData => { 
          this.loading.dismiss().then(() => {
-        this.nav.setRoot(Page1);
+        this.nav.setRoot(TabsPage);
       })
 } , error => {
     this.loading.dismiss().then( () => {

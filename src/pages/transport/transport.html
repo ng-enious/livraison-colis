@@ -1,14 +1,14 @@
-
 <ion-header>
-
   <ion-navbar>
-    <ion-title> Creation de l'annonce </ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Ajouter une annonce </ion-title>
   </ion-navbar>
-
 </ion-header>
 
-
 <ion-content padding>
+
   <ion-item>
     <ion-label stacked>Titre </ion-label>
     <ion-input [(ngModel)]="annonceTitle" type="text" placeholder="c'est quoi le titre de votre annonce ?"></ion-input>
@@ -21,7 +21,7 @@
 
    <ion-item>
     <ion-label stacked>Description </ion-label>
-    <ion-input [(ngModel)]="desc" type="text" placeholder="quelle est la description de votre annonce ?"></ion-input>
+    <ion-textarea rows="7" [(ngModel)]="desc" type="text" placeholder="quelle est la description de votre annonce ?"></ion-textarea>
   </ion-item>
 
   <ion-item>
@@ -35,11 +35,12 @@
   </ion-item>
 
    <ion-item>
-    <ion-label stacked>Adresse d'arrivée '  </ion-label>
+    <ion-label stacked>Adresse d'arrivée </ion-label>
     <ion-input [(ngModel)]="adArr" type="text" placeholder="Quell'est l'adresse d'arrivée ?"></ion-input>
   </ion-item>
 
-  <button ion-button block (click)="createAnnonce(annonceTitle , objectType , desc , TransportDate , adDep , adArr )">
+  <button ion-button  block (click)="createAnnonce(annonceTitle , objectType , desc , TransportDate , adDep , adArr )">
     Create Annonce 
   </button>
+
 </ion-content>

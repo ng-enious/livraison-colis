@@ -6,7 +6,7 @@ import {Http} from '@angular/http';
 import { FormBuilder, Validators } from '@angular/forms';
 import { AuthData } from '../../providers/auth-data';
 
-import { Page1 } from '../page1/page1';
+import { TabsPage } from '../tabs/tabs';
 //import { ChoixPage } from '../choix/choix';
 import { SignupPage } from '../signup/signup';
 import { ResetPasswordPage } from '../reset-password/reset-password';
@@ -20,7 +20,7 @@ export class LoginPage {
 
   public loginForm: any;
   public loading: any;
-
+   public error: any;
 
   constructor(public navCtrl: NavController, public authData: AuthData, 
     public formBuilder: FormBuilder, public alertCtrl: AlertController,
@@ -40,7 +40,7 @@ export class LoginPage {
     this.authData.loginUser(this.loginForm.value.email, 
       this.loginForm.value.password).then( authData => { 
          this.loading.dismiss().then(() => {
-        this.navCtrl.setRoot(Page1);
+        this.navCtrl.setRoot(TabsPage);
   })
 } , error => {
     this.loading.dismiss().then( () => {
@@ -71,7 +71,13 @@ export class LoginPage {
     this.navCtrl.push(SignupPage);
   }
 
- 
+ loginUserWithFacebook() {
+    this.authData.loginWithFacebook().subscribe(data => {
+      this.navCtrl.setRoot(TabsPage);
+    }, err => {
+      this.error = err;
+    });
+  }
 
 
 

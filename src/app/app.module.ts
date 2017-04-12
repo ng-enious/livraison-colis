@@ -1,18 +1,30 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
-import { Page1 } from '../pages/page1/page1';
 import { Page2 } from '../pages/page2/page2';
 import {LoginPage} from  '../pages/login/login';
 import { ResetPasswordPage } from '../pages/reset-password/reset-password';
 import { SignupPage } from '../pages/signup/signup';
 import { TransportPage } from '../pages/transport/transport';
 import { TrajetPage } from '../pages/trajet/trajet';
+import { TabsPage } from '../pages/tabs/tabs';
+
+
+import { StatistiquesPage  } from '../pages/statistiques/statistiques';
+import { AboutPage  } from '../pages/about/about';
+import { MesTrajetsPage } from '../pages/mes-trajets/mes-trajets';
+import { MesAnnoncesPage } from '../pages/mes-annonces/mes-annonces';
+import {ListeTrajetsPage } from '../pages/liste-trajets/liste-trajets';
+
+import { ListeAnnoncesPage } from '../pages/liste-annonces/liste-annonces';
+
+
 // Importing Providers
 import { AuthData } from '../providers/auth-data';
 import { AnnonceData} from '../providers/annonce-data';
 import { TrajetData} from '../providers/trajet-data';
 import { ProfileData} from '../providers/profile-data';
+
 // Importing AF2 Module
 import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
 
@@ -37,13 +49,20 @@ const myFirebaseAuthConfig = {
 @NgModule({
   declarations: [
     MyApp,
-    Page1,
+ 
     Page2,
     LoginPage,
     ResetPasswordPage,
     SignupPage ,
     TransportPage ,
-    TrajetPage
+    TrajetPage ,
+    StatistiquesPage ,
+    AboutPage ,
+     MesTrajetsPage  ,
+      MesAnnoncesPage ,
+      TabsPage,
+      ListeTrajetsPage ,
+      ListeAnnoncesPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -52,19 +71,27 @@ const myFirebaseAuthConfig = {
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    Page1,
+   
     Page2,
     LoginPage ,
      ResetPasswordPage,
     SignupPage ,
     TransportPage ,
-    TrajetPage
+    TrajetPage ,
+    StatistiquesPage ,
+    AboutPage ,
+    MesTrajetsPage  ,
+    MesAnnoncesPage ,
+    TabsPage ,
+    ListeTrajetsPage ,
+    ListeAnnoncesPage
+    
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AuthData , AnnonceData , TrajetData , ProfileData
+    AuthData , AnnonceData , TrajetData , ProfileData 
   ]
 })
 export class AppModule {}

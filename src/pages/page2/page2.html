@@ -4,11 +4,7 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>Profil </ion-title>
-    <ion-buttons end>
-      <button ion-button icon-only (click)="logOut()">
-        <ion-icon name="log-out"></ion-icon>
-      </button>
-    </ion-buttons>
+
   </ion-navbar>
 </ion-header>
 
@@ -55,16 +51,14 @@
       </ion-grid>
     </ion-item>
 
+  
     <ion-item (click)="updatePassword()">
       <ion-grid>
         <ion-row>
           <ion-col width-50>
             Password
           </ion-col>
-          <ion-col *ngIf="users?.password">
-            {{users?.password}}
-          </ion-col>
-          <ion-col class="placeholder-profile" *ngIf="!users?.password" >
+          <ion-col class="placeholder-profile">
             <span>
               Tap here to edit.
             </span>

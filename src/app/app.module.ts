@@ -15,6 +15,7 @@ import { AboutPage  } from '../pages/about/about';
 import { MesTrajetsPage } from '../pages/mes-trajets/mes-trajets';
 import { MesAnnoncesPage } from '../pages/mes-annonces/mes-annonces';
 import {ListeTrajetsPage } from '../pages/liste-trajets/liste-trajets';
+import {AutocompletePage } from '../pages/autocomplete/autocomplete';
 
 import { ListeAnnoncesPage } from '../pages/liste-annonces/liste-annonces';
 
@@ -33,12 +34,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 // AF2 Settings
 const firebaseConfig = {
-  apiKey: "AIzaSyDl_nFBC5PtkK9lL3kXWEHjrpXKognt_Gc",
-    authDomain: "livraison-colis.firebaseapp.com",
-    databaseURL: "https://livraison-colis.firebaseio.com",
-    projectId: "livraison-colis",
-    storageBucket: "livraison-colis.appspot.com",
-    messagingSenderId: "656985297982"
+   apiKey: "AIzaSyAdnkb6CaCKhIhWFujuJM7iTeQzKsCk_WA",
+    authDomain: "cocolisap-48e5a.firebaseapp.com",
+    databaseURL: "https://cocolisap-48e5a.firebaseio.com",
+    projectId: "cocolisap-48e5a",
+    storageBucket: "cocolisap-48e5a.appspot.com",
+    messagingSenderId: "997233376167"
 };
 
 const myFirebaseAuthConfig = {
@@ -62,7 +63,8 @@ const myFirebaseAuthConfig = {
       MesAnnoncesPage ,
       TabsPage,
       ListeTrajetsPage ,
-      ListeAnnoncesPage
+      ListeAnnoncesPage ,
+      AutocompletePage 
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -84,7 +86,8 @@ const myFirebaseAuthConfig = {
     MesAnnoncesPage ,
     TabsPage ,
     ListeTrajetsPage ,
-    ListeAnnoncesPage
+    ListeAnnoncesPage ,
+    AutocompletePage 
     
   ],
   providers: [

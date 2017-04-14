@@ -74,7 +74,7 @@ export class TransportPage {
       return;
     }
     let me = this;
-    this.service.getPlacePredictions({ input: this.autocompletearr.query, componentRestrictions: {country: 'TH'} }, function (predictions, status) {
+    this.service.getPlacePredictions({ input: this.autocompletearr.query, componentRestrictions: {country: 'th'} }, function (predictions, status) {
       me.autocompleteItems = []; 
       me.zone.run(function () {
         predictions.forEach(function (prediction) {
@@ -90,7 +90,7 @@ export class TransportPage {
       return;
     }
     let me = this;
-    this.service.getPlacePredictions({ input: this.autocompletedep.query, componentRestrictions: {country: 'TH'} }, function (predictions, status) {
+    this.service.getPlacePredictions({ input: this.autocompletedep.query, componentRestrictions: {country: 'uk'} }, function (predictions, status) {
       me.autocompleteItems = []; 
       me.zone.run(function () {
         predictions.forEach(function (prediction) {

@@ -21,7 +21,7 @@
 
    <ion-item>
     <ion-label stacked>Description </ion-label>
-    <ion-textarea  msd-elastic   [(ngModel)]="desc" type="text" placeholder="quelle est la description de votre annonce ?"></ion-textarea>
+    <ion-textarea rows=5  [(ngModel)]="desc" type="text" placeholder="quelle est la description de votre annonce ?"></ion-textarea>
   </ion-item>
  
 
@@ -40,21 +40,24 @@
       {{ item1 }}
     </ion-item>
   </ion-list>
- <!-- <ion-item>
-    <ion-label stacked>Adresse d'arrivée </ion-label>
-    <ion-input [(ngModel)]="adArr" type="text" placeholder="Quell'est l'adresse d'arrivée ?"></ion-input>
-  </ion-item>-->
-  
-  <ion-label stacked>Adresse d'arrivée </ion-label>
-   <ion-searchbar [(ngModel)]="autocompletearr.query" [showCancelButton]="true" (ionInput)="updateSearch()" (ionCancel)="dismiss()"></ion-searchbar>
 
-
-
+ <ion-label stacked>Adresse d'arrivée </ion-label>
+  <ion-searchbar [(ngModel)]="autocompletearr.query" [showCancelButton]="true" (ionInput)="updateSearch()" (ionCancel)="dismiss()"></ion-searchbar>
+<!-- <ion-item margin>
+ <ion-input type="text" placeholder="Pick an addres
+   (click)="updateSearch()" 
+ [(ngModel)]="autocompletearr.query">
+  </ion-input>
+ </ion-item>-->
+ 
  <ion-list>
+    
     <ion-item *ngFor="let item of autocompleteItems" tappable (click)="chooseItem(item)">
       {{ item }}
     </ion-item>
   </ion-list>
+  
+
 
 
 

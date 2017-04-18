@@ -1,22 +1,4 @@
-<ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Ajouter une annonce </ion-title>
-  </ion-navbar>
-</ion-header>
-
 <ion-content padding>
-
-
-
-<ion-fab right top>
-    <button ion-fab color="primary" (click)="takePicture()">
-        <ion-icon name="md-camera"></ion-icon>
-    </button>
-</ion-fab> 
-
   <ion-item>
     <ion-label stacked>Titre </ion-label>
     <ion-input [(ngModel)]="annonceTitle" type="text" placeholder="c'est quoi le titre de votre annonce ?"></ion-input>
@@ -29,50 +11,25 @@
 
    <ion-item>
     <ion-label stacked>Description </ion-label>
-    <ion-textarea rows=5  [(ngModel)]="desc" type="text" placeholder="quelle est la description de votre annonce ?"></ion-textarea>
+    <ion-input [(ngModel)]="desc" type="text" placeholder="quelle est la description de votre annonce ?"></ion-input>
   </ion-item>
- 
 
   <ion-item>
     <ion-label>Date de transport </ion-label>
     <ion-datetime displayFormat="D MMM, YY" pickerFormat="DD MMM YYYY" [(ngModel)]="TransportDate"></ion-datetime>
   </ion-item>
 
-   
+   <ion-item>
     <ion-label stacked>Adresse de départ </ion-label>
-   <!-- <ion-input [(ngModel)]="adDep" type="text" placeholder="Quell'est l'adresse de départ ?"></ion-input>-->
- <ion-searchbar [(ngModel)]="autocompletedep.query" [showCancelButton]="true" (ionInput)="updateSearch1()" (ionCancel)="dismiss()"></ion-searchbar>
-  
-   <ion-list>
-    <ion-item *ngFor="let item1 of autocompleteItems1" tappable (click)="chooseItem(item1)">
-      {{ item1 }}
-    </ion-item>
-  </ion-list>
+    <ion-input [(ngModel)]="adDep" type="text" placeholder="Quell'est l'adresse de départ ?"></ion-input>
+  </ion-item>
 
- <ion-label stacked>Adresse d'arrivée </ion-label>
-  <ion-searchbar [(ngModel)]="autocompletearr.query" [showCancelButton]="true" (ionInput)="updateSearch()" (ionCancel)="dismiss()"></ion-searchbar>
-<!-- <ion-item margin>
- <ion-input type="text" placeholder="Pick an addres
-   (click)="updateSearch()" 
- [(ngModel)]="autocompletearr.query">
-  </ion-input>
- </ion-item>-->
- 
- <ion-list>
-    
-    <ion-item *ngFor="let item of autocompleteItems" tappable (click)="chooseItem(item)">
-      {{ item }}
-    </ion-item>
-  </ion-list>
-  
+   <ion-item>
+    <ion-label stacked>Adresse d'arrivée '  </ion-label>
+    <ion-input [(ngModel)]="adArr" type="text" placeholder="Quell'est l'adresse d'arrivée ?"></ion-input>
+  </ion-item>
 
-
-  <button ion-button  block (click)="createAnnonce(annonceTitle , objectType , desc , TransportDate , adDep , adArr )">
+  <button ion-button block (click)="createAnnonce(annonceTitle , objectType , desc , TransportDate , adDep , adArr )">
     Create Annonce 
   </button>
-
-
-
-
-
 </ion-content>

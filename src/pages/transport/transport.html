@@ -9,6 +9,14 @@
 
 <ion-content padding>
 
+
+
+<ion-fab right top>
+    <button ion-fab color="primary" (click)="takePicture()">
+        <ion-icon name="md-camera"></ion-icon>
+    </button>
+</ion-fab> 
+
   <ion-item>
     <ion-label stacked>Titre </ion-label>
     <ion-input [(ngModel)]="annonceTitle" type="text" placeholder="c'est quoi le titre de votre annonce ?"></ion-input>
@@ -59,10 +67,12 @@
   
 
 
-
-
   <button ion-button  block (click)="createAnnonce(annonceTitle , objectType , desc , TransportDate , adDep , adArr )">
     Create Annonce 
   </button>
+
+
+
+
 
 </ion-content>

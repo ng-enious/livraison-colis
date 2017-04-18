@@ -7,6 +7,7 @@ import { ResetPasswordPage } from '../pages/reset-password/reset-password';
 import { SignupPage } from '../pages/signup/signup';
 import { TransportPage } from '../pages/transport/transport';
 import { TrajetPage } from '../pages/trajet/trajet';
+import {AutocompletePage} from '../pages/autocomplete/autocomplete';
 import { TabsPage } from '../pages/tabs/tabs';
 
 
@@ -15,7 +16,6 @@ import { AboutPage  } from '../pages/about/about';
 import { MesTrajetsPage } from '../pages/mes-trajets/mes-trajets';
 import { MesAnnoncesPage } from '../pages/mes-annonces/mes-annonces';
 import {ListeTrajetsPage } from '../pages/liste-trajets/liste-trajets';
-import {AutocompletePage } from '../pages/autocomplete/autocomplete';
 
 import { ListeAnnoncesPage } from '../pages/liste-annonces/liste-annonces';
 
@@ -34,12 +34,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 // AF2 Settings
 const firebaseConfig = {
-   apiKey: "AIzaSyAdnkb6CaCKhIhWFujuJM7iTeQzKsCk_WA",
-    authDomain: "cocolisap-48e5a.firebaseapp.com",
-    databaseURL: "https://cocolisap-48e5a.firebaseio.com",
-    projectId: "cocolisap-48e5a",
-    storageBucket: "cocolisap-48e5a.appspot.com",
-    messagingSenderId: "997233376167"
+ 
+      apiKey: "AIzaSyB_EKg06wnasXAOMdRwtmKI9B4hRFIoCOw",
+    authDomain: "myapp-d3848.firebaseapp.com",
+    databaseURL: "https://myapp-d3848.firebaseio.com",
+    projectId: "myapp-d3848",
+    storageBucket: "myapp-d3848.appspot.com",
+    messagingSenderId: "513437171964"
 };
 
 const myFirebaseAuthConfig = {
@@ -50,7 +51,6 @@ const myFirebaseAuthConfig = {
 @NgModule({
   declarations: [
     MyApp,
- 
     Page2,
     LoginPage,
     ResetPasswordPage,
@@ -63,8 +63,8 @@ const myFirebaseAuthConfig = {
       MesAnnoncesPage ,
       TabsPage,
       ListeTrajetsPage ,
-      ListeAnnoncesPage ,
-      AutocompletePage 
+      AutocompletePage,
+      ListeAnnoncesPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -73,7 +73,7 @@ const myFirebaseAuthConfig = {
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-   
+   AutocompletePage,
     Page2,
     LoginPage ,
      ResetPasswordPage,
@@ -86,8 +86,7 @@ const myFirebaseAuthConfig = {
     MesAnnoncesPage ,
     TabsPage ,
     ListeTrajetsPage ,
-    ListeAnnoncesPage ,
-    AutocompletePage 
+    ListeAnnoncesPage
     
   ],
   providers: [

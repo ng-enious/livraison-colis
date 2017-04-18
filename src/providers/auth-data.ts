@@ -6,9 +6,11 @@ import { Facebook } from 'ionic-native';
 import firebase from 'firebase';
 import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
 import { Platform } from 'ionic-angular';
+//import { Storage } from '@ionic/storage';
 @Injectable()
 export class AuthData {
 fireAuth: any;
+ HAS_LOGGED_IN = 'hasLoggedIn';
   constructor(public http: Http ,public  af: AngularFire , private platform: Platform) {
     af.auth.subscribe( user => {
             if (user) {
@@ -85,7 +87,11 @@ fireAuth: any;
     });
   }
 
-
+  // hasLoggedIn(): Promise<boolean> {
+  //   return this.storage.get(this.HAS_LOGGED_IN).then((value) => {
+  //     return value === true;
+  //   });
+  // };
 
 
 }

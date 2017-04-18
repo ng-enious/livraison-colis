@@ -9,8 +9,8 @@
       <ion-icon name="menu"></ion-icon>
     </button>
      <ion-title> Listes de mes trajets </ion-title>
-    <ion-buttons end>
-    </ion-buttons>
+    <!--<ion-buttons end>
+    </ion-buttons>-->
   </ion-navbar>
 </ion-header>
 
@@ -20,10 +20,8 @@
       <h2>{{trajet?.title}}</h2>
       <p>Days: <strong>{{trajet?.days}}</strong></p>
        <p>price: <strong>{{trajet?.price}} dt</strong></p>
-     <p>Adresse depart : <strong>{{trajet?.adresse_dep}}</strong></p>
+     <p>Adresse depart: <strong>{{trajet?.adresse_dep}}</strong></p>
      <p>Adresse arrivée: <strong>{{trajet?.adresse_arr}}</strong></p>
-    
     </ion-item>
   </ion-list>
 </ion-content>
- <!-- (click)="goToAnnonceDetail(annonce.id)" -->

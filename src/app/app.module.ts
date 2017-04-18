@@ -9,7 +9,7 @@ import { TransportPage } from '../pages/transport/transport';
 import { TrajetPage } from '../pages/trajet/trajet';
 import {AutocompletePage} from '../pages/autocomplete/autocomplete';
 import { TabsPage } from '../pages/tabs/tabs';
-
+import { AccueilPage } from '../pages/accueil/accueil';
 
 import { StatistiquesPage  } from '../pages/statistiques/statistiques';
 import { AboutPage  } from '../pages/about/about';
@@ -32,15 +32,13 @@ import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-// AF2 Settings
 const firebaseConfig = {
- 
-      apiKey: "AIzaSyB_EKg06wnasXAOMdRwtmKI9B4hRFIoCOw",
-    authDomain: "myapp-d3848.firebaseapp.com",
-    databaseURL: "https://myapp-d3848.firebaseio.com",
-    projectId: "myapp-d3848",
-    storageBucket: "myapp-d3848.appspot.com",
-    messagingSenderId: "513437171964"
+   apiKey: "AIzaSyAdnkb6CaCKhIhWFujuJM7iTeQzKsCk_WA",
+    authDomain: "cocolisap-48e5a.firebaseapp.com",
+    databaseURL: "https://cocolisap-48e5a.firebaseio.com",
+    projectId: "cocolisap-48e5a",
+    storageBucket: "cocolisap-48e5a.appspot.com",
+    messagingSenderId: "997233376167"
 };
 
 const myFirebaseAuthConfig = {
@@ -64,7 +62,9 @@ const myFirebaseAuthConfig = {
       TabsPage,
       ListeTrajetsPage ,
       AutocompletePage,
-      ListeAnnoncesPage
+      ListeAnnoncesPage ,
+      AccueilPage
+
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -86,7 +86,8 @@ const myFirebaseAuthConfig = {
     MesAnnoncesPage ,
     TabsPage ,
     ListeTrajetsPage ,
-    ListeAnnoncesPage
+    ListeAnnoncesPage,
+    AccueilPage
     
   ],
   providers: [

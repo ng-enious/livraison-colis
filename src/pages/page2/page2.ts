@@ -1,9 +1,11 @@
-import { NavController, AlertController } from 'ionic-angular';
-import { Component } from '@angular/core';
+import { NavController, AlertController  } from 'ionic-angular';
+import { Component , ViewChild } from '@angular/core';
+
+import { Nav} from 'ionic-angular';
 import { ProfileData } from '../../providers/profile-data';
 import { AuthData } from '../../providers/auth-data';
 import { LoginPage } from '../login/login';
-
+import { App } from 'ionic-angular';
 @Component({
   selector: 'page2',
   templateUrl: 'page2.html',
@@ -11,8 +13,9 @@ import { LoginPage } from '../login/login';
 export class Page2 {
   public users : any;
   public birthDate: string;
+ @ViewChild(Nav)nav: Nav ;
 
-  constructor(public navCtrl: NavController, public profileData: ProfileData,
+  constructor(public appCtrl: App ,public navCtrl: NavController, public profileData: ProfileData,
     public authData: AuthData, public alertCtrl: AlertController) {
   }
 
@@ -23,11 +26,7 @@ export class Page2 {
     });
   }
 
-  logOut(){
-    this.authData.logoutUser().then(() => {
-      this.navCtrl.setRoot(LoginPage);
-    });
-  }
+
 
   updateUserName(){
     let alert = this.alertCtrl.create({
@@ -168,4 +167,13 @@ export class Page2 {
     alert.present();
 
   }
+
+   logoutApp(){
+    this.authData.logoutUser().then(() => {
+        //this.navCtrl.setRoot(LoginPage)
+
+        this.appCtrl.getRootNav().setRoot(LoginPage); 
+    });
+  }
+ 
 }

@@ -31,9 +31,6 @@ fireAuth: any;
   resetPassword(email: string): firebase.Promise<any> {
     return firebase.auth().sendPasswordResetEmail(email);
   }
- 
- 
-   
 
   logoutUser(): firebase.Promise<any> {
     return this.af.auth.logout();

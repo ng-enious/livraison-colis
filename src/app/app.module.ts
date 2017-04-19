@@ -15,9 +15,6 @@ import { StatistiquesPage  } from '../pages/statistiques/statistiques';
 import { AboutPage  } from '../pages/about/about';
 import { MesTrajetsPage } from '../pages/mes-trajets/mes-trajets';
 import { MesAnnoncesPage } from '../pages/mes-annonces/mes-annonces';
-import {ListeTrajetsPage } from '../pages/liste-trajets/liste-trajets';
-
-import { ListeAnnoncesPage } from '../pages/liste-annonces/liste-annonces';
 
 
 // Importing Providers
@@ -60,9 +57,9 @@ const myFirebaseAuthConfig = {
      MesTrajetsPage  ,
       MesAnnoncesPage ,
       TabsPage,
-      ListeTrajetsPage ,
+     
       AutocompletePage,
-      ListeAnnoncesPage ,
+    
       AccueilPage
 
   ],
@@ -85,8 +82,7 @@ const myFirebaseAuthConfig = {
     MesTrajetsPage  ,
     MesAnnoncesPage ,
     TabsPage ,
-    ListeTrajetsPage ,
-    ListeAnnoncesPage,
+    
     AccueilPage
     
   ],

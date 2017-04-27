@@ -5,10 +5,13 @@ export class TrajetData {
   public currentUser: string;
   public trajetList: firebase.database.Reference;
 
+
   constructor() {
     this.currentUser = firebase.auth().currentUser.uid;
     this.trajetList = firebase.database().ref("trajets");
      }
+
+
      
   getTrajetsList(): firebase.database.Reference {
     return this.trajetList;

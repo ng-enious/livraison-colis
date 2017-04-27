@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController} from 'ionic-angular';
 import firebase from 'firebase';
 import { TrajetData } from '../../providers/trajet-data';
-
+import { TrajetPage } from '../trajet/trajet';
 @Component({
   selector: 'page-mes-trajets',
   templateUrl: 'mes-trajets.html'
@@ -37,5 +37,10 @@ export class MesTrajetsPage {
                   });
 
     }
+
+       AddNewT(){
+      this.navCtrl.push(TrajetPage);
+    }
+
 
 }

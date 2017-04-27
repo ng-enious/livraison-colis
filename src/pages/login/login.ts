@@ -40,7 +40,7 @@ export class LoginPage {
     this.authData.loginUser(this.loginForm.value.email, 
       this.loginForm.value.password).then( authData => { 
          this.loading.dismiss().then(() => {
-        this.navCtrl.setRoot(TabsPage);
+        this.navCtrl.push(TabsPage);
   })
 } , error => {
     this.loading.dismiss().then( () => {

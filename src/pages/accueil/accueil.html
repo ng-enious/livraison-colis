@@ -1,10 +1,5 @@
-<!--
-  Generated template for the Accueil page.
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
+<!--<ion-header>
   <ion-navbar color="primary" >
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
@@ -13,11 +8,44 @@
     <ion-buttons end>
     </ion-buttons>
   </ion-navbar>
+</ion-header>-->
+
+<ion-header>
+  <ion-navbar  color="primary" >
+     <ion-title> Accueil </ion-title>
+  
+  </ion-navbar>
+
+  
 </ion-header>
 
-<ion-content padding>
-  <ion-label> Annonces </ion-label>
 
+
+
+<ion-content padding>
+
+  <ion-item no-border-bottom   >
+      <ion-segment [(ngModel)]="segment" >
+      <ion-segment-button value="trajets">
+      Tous Les Trajets 
+      </ion-segment-button>
+      <ion-segment-button value="annonces">
+        Tous Les Annonces 
+      </ion-segment-button>
+    </ion-segment>
+
+    <ion-toolbar no-border-top>
+    <ion-searchbar color="primary"
+                   [(ngModel)]="queryText"
+                   (ionInput)="updateSchedule()"
+                   placeholder="Search">
+    </ion-searchbar>
+  </ion-toolbar>
+
+  </ion-item>
+
+<ion-item *ngIf="segment === 'annonces'" >
+ 
   <ion-list>
     <ion-item *ngFor="let annonce of annonces" >
       <h2>{{annonce?.title}}</h2>
@@ -25,20 +53,26 @@
        <p> Description : <strong>{{annonce?.description}}</strong></p>
      <p>Adresse depart : <strong>{{annonce?.adresse_dep}}</strong></p>
      <p>Adresse arrivée: <strong>{{annonce?.adresse_arr}}</strong></p>
-    
+      </ion-item>
+      </ion-list>
     </ion-item>
-  </ion-list>
-<ion-label> Trajets </ion-label>
 
+ 
+
+   
+<ion-item *ngIf="segment === 'trajets'" >
+  
    <ion-list>
     <ion-item *ngFor="let trajet of trajets" >
+  
       <h2>{{trajet?.title}}</h2>
       <p>Day: <strong>{{trajet?.days}}</strong></p>
        <p>Adresse départ: <strong>{{trajet?.adresse_dep}}</strong></p>
      <p>Adresse arrivée: <strong>{{trajet?.adresse_arr}}</strong></p>
         <p>price: <strong>{{trajet?.price}}</strong></p>
     
-    </ion-item>
+       </ion-item>
+   
   </ion-list> 
-
+ </ion-item>
 </ion-content>

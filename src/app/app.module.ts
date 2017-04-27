@@ -22,7 +22,6 @@ import { AuthData } from '../providers/auth-data';
 import { AnnonceData} from '../providers/annonce-data';
 import { TrajetData} from '../providers/trajet-data';
 import { ProfileData} from '../providers/profile-data';
-
 // Importing AF2 Module
 import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
 

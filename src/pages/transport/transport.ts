@@ -2,7 +2,7 @@
 import { Component } from '@angular/core';
 import { NavController} from 'ionic-angular';
 import { AnnonceData } from '../../providers/annonce-data';
-import { TabsPage } from '../tabs/tabs';
+import { MesAnnoncesPage } from '../mes-annonces/mes-annonces';
 /*
   Generated class for the Transport page.
 
@@ -17,11 +17,11 @@ export class TransportPage {
 
  constructor(public navCtrl: NavController, public annonceData: AnnonceData) {}
 
-  createAnnonce(annoncetitle: string, annoncetype : string,  annonceDesc : string ,  annonceDate: string , 
+  createAnnonce(id_annonce :string  ,annoncetitle: string, annoncetype : string,  annonceDesc : string ,  annonceDate: string , 
     adresseDep : string , adresseArr: string) {
-    this.annonceData.createAnnonce(annoncetitle, annonceDate, annoncetype , 
+    this.annonceData.createAnnonce( id_annonce ,  annoncetitle, annonceDate, annoncetype , 
     annonceDesc, adresseDep, adresseArr).then( () => {
-    this.navCtrl.push(TabsPage);
+    this.navCtrl.setRoot(MesAnnoncesPage);
     });
   }
  

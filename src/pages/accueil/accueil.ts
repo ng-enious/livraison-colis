@@ -1,13 +1,9 @@
-import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { Component , ViewChild} from '@angular/core';
+import { NavController, NavParams , List , App } from 'ionic-angular';
 import { AnnonceData } from '../../providers/annonce-data';
 import { TrajetData } from '../../providers/trajet-data';
-/*
-  Generated class for the Accueil page.
+import { AccueilData } from '../../providers/accueil-data';
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-accueil',
   templateUrl: 'accueil.html'
@@ -16,7 +12,12 @@ export class AccueilPage {
     public annonces : any;
       public trajets : any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams , public annonceData: AnnonceData , public trajetData: TrajetData ) {}
+
+ 
+  queryText = '';
+
+
+  constructor( public app: App, public navCtrl: NavController, public navParams: NavParams , public annonceData: AnnonceData , public trajetData: TrajetData ) {}
 
   ionViewDidEnter(){
     this.annonceData.getAnnoncesList().on('value', snapshot => {
@@ -51,6 +52,9 @@ export class AccueilPage {
       });
       this.trajets = rawList;
     });
+
+
+ 
 
   }
 

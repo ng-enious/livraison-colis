@@ -3,9 +3,11 @@ import firebase from 'firebase';
 @Injectable()
 export class AnnonceData {
   public currentUser: string;
+  public annonce : string;
   public annonceList: firebase.database.Reference;
 
   constructor() {
+    this.annonce = 
     this.currentUser = firebase.auth().currentUser.uid;
      this.annonceList = firebase.database().ref("annonces");   
   }
@@ -13,11 +15,12 @@ export class AnnonceData {
   getAnnoncesList(): firebase.database.Reference {  
     return this.annonceList;
   }
- createAnnonce(annoncetitle: string, annonceDate: string, annoncetype : string , 
+ createAnnonce(id_annonce : string ,  annoncetitle: string , annonceDate: string, annoncetype : string , 
   description  : string , adresseDep : string , adresseArr: string): firebase.Promise<any> {
+
     return this.annonceList.push({
       user_id : this.currentUser ,
-      title : annoncetitle,
+      title : annoncetitle ,
       date: annonceDate ,
       type_obj : annoncetype ,
       description  : description  , 
@@ -27,6 +30,5 @@ export class AnnonceData {
   }
 
  
-  
 
 }

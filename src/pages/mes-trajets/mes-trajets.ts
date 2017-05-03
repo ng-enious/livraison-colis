@@ -25,6 +25,7 @@ export class MesTrajetsPage {
                     snapshot.forEach( snap => {
                       rawList.push({
                         id: snap.key,
+                       user_id : snap.val().user_id, 
                         title : snap.val().title,
                         days: snap.val().days,
                         price : snap.val().price ,
@@ -39,8 +40,34 @@ export class MesTrajetsPage {
     }
 
        AddNewT(){
-      this.navCtrl.push(TrajetPage);
+
+           let trajet  = {
+    title : '', 
+    days : '', 
+    price : '', 
+    adresse_dep: '',
+    adresse_arr : ''
+      } ;
+      
+            this.navCtrl.push(TrajetPage, { 
+       trajetE : trajet });
+ 
     }
+
+editTrajet(trajet){
+  //console.log(trajet);
+
+this.navCtrl.push(TrajetPage, { 
+     trajet });
+}
+
+    deleteTrajet(trajet){
+       console.log(trajet);
+  
+     this.trajetData.deleteTrajet(trajet);
+    }
+
+ 
 
 
 }

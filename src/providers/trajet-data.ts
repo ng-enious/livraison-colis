@@ -8,7 +8,7 @@ export class TrajetData {
 
   constructor() {
     this.currentUser = firebase.auth().currentUser.uid;
-    this.trajetList = firebase.database().ref("trajets");
+    this.trajetList = firebase.database().ref('/trajets');
      }
 
 
@@ -18,7 +18,7 @@ export class TrajetData {
   }
 
   createTrajet(trajetTitle: string ,  adDep : string , adArr: string ,  date: string , 
-     prix : number): firebase.Promise<any> {
+     prix : string): firebase.Promise<any> {
     return this.trajetList.push({
       user_id : this.currentUser ,
       title : trajetTitle ,
@@ -27,4 +27,22 @@ export class TrajetData {
       days : date , 
       price : prix 
     });
-  }}
+  }
+
+ updateTrajet( trajetId : string , trajetTitle: string ,  adDep : string , adArr: string ,  date: string , 
+     price : string): firebase.Promise<any> {
+     return this.trajetList.child(trajetId).update( {
+           title : trajetTitle ,
+      adresse_dep : adDep  ,
+      adresse_arr  :  adArr ,
+      days : date , 
+      price : price
+     }) ;
+   }
+
+ deleteTrajet(trajet : any ): firebase.Promise<any>  {
+     return this.trajetList.child(trajet.id).remove();
+
+   }
+
+}

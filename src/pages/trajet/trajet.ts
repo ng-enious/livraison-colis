@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { NavController} from 'ionic-angular';
+import { Component  } from '@angular/core';
+import { NavController , NavParams} from 'ionic-angular';
 import { TrajetData } from '../../providers/trajet-data';
 import { MesTrajetsPage } from '../mes-trajets/mes-trajets';
 
@@ -8,17 +8,31 @@ import { MesTrajetsPage } from '../mes-trajets/mes-trajets';
   templateUrl: 'trajet.html'
 })
 export class TrajetPage {
+trajet : any ;
 
- constructor(public navCtrl: NavController, public trajetData: TrajetData) {}
+ constructor( public navCtrl: NavController, public trajetData: TrajetData  , public navParams: NavParams) {
 
-  createTrajet(trajetTitle: string,   adDep : string , adArr: string ,  date: string , 
-     prix : number ){
-    this.trajetData.createTrajet(trajetTitle,  adDep , adArr   ,date , prix ).then( () => {
+this.trajet = this.navParams.data.tarjetE ;
+//console.log(this.trajet);
+ }
+
+  createTrajet(trajetId : string , trajetTitle: string,   adDep : string , adArr: string ,  date: string , 
+     price : string ){
+       if(!(trajetId)){
+    this.trajetData.createTrajet( trajetTitle,  adDep , adArr   ,date , price ).then( () => {
       this.navCtrl.setRoot(MesTrajetsPage);
-    });
+    })}
+   else { 
+     this.trajetData.updateTrajet(trajetId, trajetTitle,  adDep , adArr   ,date , price ).then( () => {
+     this.navCtrl.setRoot(MesTrajetsPage);
+
+            })
+
   }
  
 
 
 
-}
+
+ 
+     }}

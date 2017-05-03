@@ -9,39 +9,40 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding>
-  <input type="hidden" [(ngModel)]="id_annonce" />
 
+  <input type="hidden" [(ngModel)]="annonce.id" />
+  
   <ion-item>
     <ion-label stacked>Titre </ion-label>
-    <ion-input [(ngModel)]="annonceTitle" type="text" placeholder="c'est quoi le titre de votre annonce ?"></ion-input>
+    <ion-input [(ngModel)]="annonce.title" type="text" placeholder="c'est quoi le titre de votre annonce ?"></ion-input>
   </ion-item>
 
    <ion-item>
     <ion-label stacked>Type d'objet </ion-label>
-    <ion-input [(ngModel)]="objectType" type="text" placeholder="c'est quoi le type de votre objet ?"></ion-input>
+    <ion-input [(ngModel)]="annonce.type_obj" type="text" placeholder="c'est quoi le type de votre objet ?"></ion-input>
   </ion-item>
 
    <ion-item>
     <ion-label stacked>Description </ion-label>
-    <ion-input [(ngModel)]="desc" type="text" placeholder="quelle est la description de votre annonce ?"></ion-input>
+    <ion-input [(ngModel)]="annonce.description" type="text" placeholder="quelle est la description de votre annonce ?"> </ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label>Date de transport </ion-label>
-    <ion-datetime displayFormat="D MMM, YY" pickerFormat="DD MMM YYYY" [(ngModel)]="TransportDate"></ion-datetime>
+    <ion-datetime displayFormat="D MMM, YY" pickerFormat="DD MMM YYYY" [(ngModel)]="annonce.date"></ion-datetime>
   </ion-item>
 
    <ion-item>
     <ion-label stacked>Adresse de départ </ion-label>
-    <ion-input [(ngModel)]="adDep" type="text" placeholder="Quell'est l'adresse de départ ?"></ion-input>
+    <ion-input [(ngModel)]="annonce.adresse_dep" type="text" placeholder="Quell'est l'adresse de départ ?"></ion-input>
   </ion-item>
 
    <ion-item>
     <ion-label stacked>Adresse d'arrivée  </ion-label>
-    <ion-input [(ngModel)]="adArr" type="text" placeholder="Quell'est l'adresse d'arrivée ?"></ion-input>
+    <ion-input [(ngModel)]="annonce.adresse_arr" type="text" placeholder="Quell'est l'adresse d'arrivée ?"></ion-input>
   </ion-item>
 
-  <button ion-button block (click)="createAnnonce( id_annonce , annonceTitle , objectType , desc , TransportDate , adDep , adArr )">
+  <button ion-button block (click)="createAnnonce( annonce.id ,   annonce.title , annonce.type_obj , annonce.description , annonce.date , annonce.adresse_dep , annonce.adresse_arr )">
     
-   <span *ngIf="id_annonce">Update Annonce</span><span *ngIf="!id_annonce">Create Annonce  </span> </button>
-</ion-content>
+   <span *ngIf="annonce.id"> Update Annonce</span> <span *ngIf="!annonce.id">Create Annonce  </span> </button>
+</ion-content> 

@@ -2,7 +2,7 @@ import { Component , ViewChild} from '@angular/core';
 import { NavController, NavParams , List , App } from 'ionic-angular';
 import { AnnonceData } from '../../providers/annonce-data';
 import { TrajetData } from '../../providers/trajet-data';
-import { AccueilData } from '../../providers/accueil-data';
+//import { AccueilData } from '../../providers/accueil-data';
 
 @Component({
   selector: 'page-accueil',

@@ -29,7 +29,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 const firebaseConfig = {
-   apiKey: "AIzaSyAdnkb6CaCKhIhWFujuJM7iTeQzKsCk_WA",
+     apiKey: "AIzaSyAdnkb6CaCKhIhWFujuJM7iTeQzKsCk_WA",
     authDomain: "cocolisap-48e5a.firebaseapp.com",
     databaseURL: "https://cocolisap-48e5a.firebaseio.com",
     projectId: "cocolisap-48e5a",

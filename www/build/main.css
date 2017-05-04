@@ -24517,6 +24517,60 @@ ion-navbar.toolbar {
   }
 }
 
+ion-app, ion-content {
+  background-color: transparent !important;
+}
+
+page-schedule ion-item-sliding[track=ionic] ion-label {
+  border-left: 2px solid #387ef5;
+  padding-left: 10px;
+}
+
+page-schedule ion-item-sliding[track=angular] ion-label {
+  border-left: 2px solid #AC282B;
+  padding-left: 10px;
+}
+
+page-schedule ion-item-sliding[track=communication] ion-label {
+  border-left: 2px solid #8E8D93;
+  padding-left: 10px;
+}
+
+page-schedule ion-item-sliding[track=tooling] ion-label {
+  border-left: 2px solid #FE4C52;
+  padding-left: 10px;
+}
+
+page-schedule ion-item-sliding[track=services] ion-label {
+  border-left: 2px solid #FD8B2D;
+  padding-left: 10px;
+}
+
+page-schedule ion-item-sliding[track=design] ion-label {
+  border-left: 2px solid #FED035;
+  padding-left: 10px;
+}
+
+page-schedule ion-item-sliding[track=workshop] ion-label {
+  border-left: 2px solid #69BB7B;
+  padding-left: 10px;
+}
+
+page-schedule ion-item-sliding[track=food] ion-label {
+  border-left: 2px solid #3BC7C4;
+  padding-left: 10px;
+}
+
+page-schedule ion-item-sliding[track=documentation] ion-label {
+  border-left: 2px solid #B16BE3;
+  padding-left: 10px;
+}
+
+page-schedule ion-item-sliding[track=navigation] ion-label {
+  border-left: 2px solid #6600CC;
+  padding-left: 10px;
+}
+
 page-login form {
   margin-bottom: 32px;
 }

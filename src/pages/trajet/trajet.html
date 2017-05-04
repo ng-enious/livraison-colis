@@ -12,23 +12,20 @@
 
 <ion-content padding>
 
-  <input type="hidden" [(ngModel)]="trajet.id" />
+  <!--<input type="hidden" [(ngModel)]="" />-->
   <ion-item>
     <ion-label stacked>Titre </ion-label>
     <ion-input [(ngModel)]="trajet.title" type="text" placeholder="c'est quoi le titre de votre trajet ?"></ion-input>
   </ion-item>
-
-  
-
  <ion-item>
     <ion-label stacked>Adresse de départ </ion-label> 
-        <ion-input [(ngModel)]="trajet.adresse_dep" type="text"  placeholder="Quell'est l'adresse de départ ?"></ion-input>
+        <ion-input [(ngModel)]="trajet.adresse_dep" type="text" placeholder="Quell'est l'adresse de départ ?"></ion-input>
      </ion-item>
     
 
    <ion-item>
     <ion-label stacked>Adresse d'arrivée </ion-label>
-    <ion-input [(ngModel)]="trajet.adresse_arr" type="number" placeholder="Quell'est l'adresse d'arrivée ?"></ion-input>
+    <ion-input [(ngModel)]="trajet.adresse_arr" type="text" placeholder="Quell'est l'adresse d'arrivée ?"></ion-input>
   </ion-item>
  
   <ion-item>
@@ -42,8 +39,11 @@
   </ion-item>
 
    
-  <button ion-button block (click)="createTrajet(trajet.id , trajet.title  , trajet.adresse_dep , trajet.adresse_arr , trajet.days , trajet.price )">
-       <span *ngIf="trajet.id"> Update Trajet </span> <span *ngIf="!trajet.id">Create Trajet  </span> </button>
+  <button ion-button block (click)="createTrajet( trajet.title , trajet.adresse_dep , trajet.adresse_arr , trajet.days , trajet.price)">
+       <!--<span *ngIf=> Update Trajet </span> <span *ngIf="!">Create Trajet  </span> -->
+
+       create trajet
+       </button>
 
 
 </ion-content>

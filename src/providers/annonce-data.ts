@@ -3,7 +3,6 @@ import firebase from 'firebase';
 @Injectable()
 export class AnnonceData {
   public currentUser: string;
-  public annonce : string;
   public annonceList: firebase.database.Reference;
 
   constructor() {
@@ -15,6 +14,7 @@ export class AnnonceData {
   getAnnoncesList(): firebase.database.Reference {  
     return this.annonceList;
   }
+
  createAnnonce(  annoncetitle: string , annonceDate: string, annoncetype : string , 
   description  : string , adresseDep : string , adresseArr: string): firebase.Promise<any> {
 

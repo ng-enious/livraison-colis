@@ -1,9 +1,9 @@
-import { Component , ViewChild} from '@angular/core';
-import { NavController, NavParams , List , App } from 'ionic-angular';
+import { Component } from '@angular/core';
+import { NavController, NavParams  , App } from 'ionic-angular';
 import { AnnonceData } from '../../providers/annonce-data';
 import { TrajetData } from '../../providers/trajet-data';
 //import { AccueilData } from '../../providers/accueil-data';
-
+import firebase from 'firebase';
 @Component({
   selector: 'page-accueil',
   templateUrl: 'accueil.html'
@@ -11,18 +11,22 @@ import { TrajetData } from '../../providers/trajet-data';
 export class AccueilPage {
     public annonces : any;
       public trajets : any;
-
-
- 
-  queryText = '';
-
+     queryText = '';
+  public currentUser: string;
 
   constructor( public app: App, public navCtrl: NavController, public navParams: NavParams , public annonceData: AnnonceData , public trajetData: TrajetData ) {}
 
+
+
+
+
   ionViewDidEnter(){
+
+       this.currentUser = firebase.auth().currentUser.uid;
     this.annonceData.getAnnoncesList().on('value', snapshot => {
       let rawList = [];
       snapshot.forEach( snap => {
+          if ( this.currentUser  != snap.val().user_id  ){
         rawList.push({
         //  id: snap.key,
           title : snap.val().title,
@@ -32,14 +36,16 @@ export class AccueilPage {
            adresse_arr : snap.val().adresse_arr ,
         });
       return false
-      });
+        }  });
       this.annonces = rawList;
     });
+
 
 
         this.trajetData.getTrajetsList().on('value', snapshot => {
       let rawList = [];
       snapshot.forEach( snap => {
+        if ( this.currentUser  != snap.val().user_id  ){
         rawList.push({
         //  id: snap.key,
           title : snap.val().title,
@@ -49,17 +55,13 @@ export class AccueilPage {
            adresse_arr : snap.val().adresse_arr ,
         });
       return false
-      });
+    }}
+
+    );
       this.trajets = rawList;
     });
 
 
- 
+}
 
   }
-
-
-
-
-
-}

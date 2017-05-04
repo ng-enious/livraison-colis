@@ -14,7 +14,7 @@ annonce : any ;
  constructor(public navCtrl: NavController, public annonceData: AnnonceData ,  public navParams: NavParams) {
 
  this.annonce = this.navParams.data.annonceE ;
-
+console.log(this.annonce ); 
  }
 
   createAnnonce( annonceId : string ,  annoncetitle: string, annoncetype : string,  annonceDesc : string ,  annonceDate: string , 

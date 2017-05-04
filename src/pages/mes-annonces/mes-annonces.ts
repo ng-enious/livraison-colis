@@ -57,6 +57,7 @@ export class MesAnnoncesPage {
 
     edit(annonce){
       //console.log(annonce);
+      
       this.navCtrl.push(TransportPage, { 
         annonceE : annonce });
    }

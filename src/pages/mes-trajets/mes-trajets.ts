@@ -48,26 +48,19 @@ export class MesTrajetsPage {
     adresse_dep: '',
     adresse_arr : ''
       } ;
-      
-            this.navCtrl.push(TrajetPage, { 
+     // console.log(trajet);
+     this.navCtrl.push(TrajetPage, { 
        trajetE : trajet });
  
     }
-
 editTrajet(trajet){
-  //console.log(trajet);
+ // console.log(trajet);
 
 this.navCtrl.push(TrajetPage, { 
-     trajet });
+    trajetE :  trajet });
 }
-
-    deleteTrajet(trajet){
-       console.log(trajet);
-  
-     this.trajetData.deleteTrajet(trajet);
+ deleteTrajet(trajet){
+    this.trajetData.deleteTrajet(trajet);
     }
-
- 
-
-
 }
+

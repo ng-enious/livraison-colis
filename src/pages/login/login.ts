@@ -73,7 +73,7 @@ export class LoginPage {
 
  loginUserWithFacebook() {
     this.authData.loginWithFacebook().subscribe(data => {
-      this.navCtrl.setRoot(TabsPage);
+      this.navCtrl.push(TabsPage);
     }, err => {
       this.error = err;
     });

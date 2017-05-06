@@ -7,7 +7,6 @@ import { ResetPasswordPage } from '../pages/reset-password/reset-password';
 import { SignupPage } from '../pages/signup/signup';
 import { TransportPage } from '../pages/transport/transport';
 import { TrajetPage } from '../pages/trajet/trajet';
-import {AutocompletePage} from '../pages/autocomplete/autocomplete';
 import { TabsPage } from '../pages/tabs/tabs';
 import { AccueilPage } from '../pages/accueil/accueil';
 
@@ -56,9 +55,7 @@ const myFirebaseAuthConfig = {
      MesTrajetsPage  ,
       MesAnnoncesPage ,
       TabsPage,
-     
-      AutocompletePage,
-    
+  
       AccueilPage
 
   ],
@@ -69,7 +66,7 @@ const myFirebaseAuthConfig = {
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-   AutocompletePage,
+ 
     Page2,
     LoginPage ,
      ResetPasswordPage,

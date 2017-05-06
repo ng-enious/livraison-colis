@@ -53,6 +53,11 @@
        <p> Description : <strong>{{annonce?.description}}</strong></p>
      <p>Adresse depart : <strong>{{annonce?.adresse_dep}}</strong></p>
      <p>Adresse arrivée: <strong>{{annonce?.adresse_arr}}</strong></p>
+
+     <button ion-button color="primary" icon-left (click)="envoie(annonce)">
+          <ion-icon name="send"></ion-icon>
+          Envoyer demande 
+        </button> 
       </ion-item>
       </ion-list>
     </ion-item>
@@ -69,8 +74,13 @@
       <p>Day: <strong>{{trajet?.days}}</strong></p>
        <p>Adresse départ: <strong>{{trajet?.adresse_dep}}</strong></p>
      <p>Adresse arrivée: <strong>{{trajet?.adresse_arr}}</strong></p>
-        <p>price: <strong>{{trajet?.price}}</strong></p>
+        <p>price: <strong>{{trajet?.price}} dt </strong></p>
     
+      <button ion-button color="primary" icon-left (click)="envoie(trajet)">
+          <ion-icon name="send"></ion-icon>
+          Envoyer demande 
+        </button> 
+
        </ion-item>
    
   </ion-list> 

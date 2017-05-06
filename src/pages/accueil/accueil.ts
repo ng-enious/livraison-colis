@@ -28,7 +28,8 @@ export class AccueilPage {
       snapshot.forEach( snap => {
           if ( this.currentUser  != snap.val().user_id  ){
         rawList.push({
-        //  id: snap.key,
+        id: snap.key,
+         user_id : snap.val().user_id ,
           title : snap.val().title,
           date: snap.val().date,
           description : snap.val().description ,
@@ -47,7 +48,8 @@ export class AccueilPage {
       snapshot.forEach( snap => {
         if ( this.currentUser  != snap.val().user_id  ){
         rawList.push({
-        //  id: snap.key,
+         id: snap.key,
+         user_id : snap.val().user_id ,
           title : snap.val().title,
           days: snap.val().days,
           price : snap.val().price ,
@@ -61,6 +63,10 @@ export class AccueilPage {
       this.trajets = rawList;
     });
 
+
+}
+envoie(annonce){
+ console.log( "currentUser : " + this.currentUser + ", userIdOfAn/trj : " + annonce.user_id );
 
 }
 

@@ -24571,14 +24571,6 @@ page-schedule ion-item-sliding[track=navigation] ion-label {
   padding-left: 10px;
 }
 
-page-login form {
-  margin-bottom: 32px;
-}
-
-page-login form button {
-  margin-top: 20px;
-}
-
 page-login p {
   font-size: 0.8em;
   color: #d2d2d2;
@@ -24605,6 +24597,23 @@ page-login .facebook-btn {
   margin: auto;
   width: 95%;
   margin-bottom: 5px;
+}
+
+page-login .login-btn {
+  margin-top: 5px;
+}
+
+page-login img.auth-img {
+  width: 40%;
+  margin-left: 30%;
+  padding: 40px 0px;
+}
+
+page-login .button-container {
+  position: absolute;
+  bottom: 0;
+  width: calc(100% - 32px);
+  padding-bottom: 10px;
 }
 
 page-reset-password form {

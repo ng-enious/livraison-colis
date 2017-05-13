@@ -1,12 +1,5 @@
 page-login {
-    form {
-        margin-bottom: 32px;
-         
-        button {
-            margin-top: 20px;
-           
-        }
-    }
+    
 
     p {
         font-size: 0.8em;
@@ -35,5 +28,22 @@ page-login {
     width: 95%;
     margin-bottom: 5px;
   }
+
+  .login-btn {
+    margin-top: 5px;
+  }
+
+    img.auth-img {
+        width: 40%;
+        margin-left: 30%;
+        padding: 40px 0px
+    }
+
+    .button-container {
+        position: absolute;
+        bottom: 0;
+        width: calc(100% - 32px);
+        padding-bottom: 10px;
+    }
 
 }

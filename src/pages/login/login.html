@@ -1,21 +1,18 @@
- <style >
-  ion-content{
-    background : url('img/ecran1.jpg') center/cover; }
-  </style>
-
-<ion-header>
+<!-- <ion-header>
   <ion-navbar hide-tabs color="primary" >
   <ion-title>
     CoColis
     </ion-title>
   
   </ion-navbar>
-</ion-header>
+</ion-header> -->
 
 
-<ion-content padding >
-  
-  <form [formGroup]="loginForm" (submit)="loginUser()" novalidate  >
+<ion-content padding hide-tabs class="login-container">
+   
+<img src="../assets/img/logo-black.png" class="auth-img">
+
+  <form [formGroup]="loginForm" (submit)="loginUser()" novalidate>
 
     <ion-item>
       <ion-label stacked>Email</ion-label>
@@ -41,25 +38,32 @@
       loginForm.controls.password.dirty">
       <p>Your password needs more than 6 characters.</p>
     </ion-item>
-
-    <button ion-button ion-button  block type="submit">
+    <button ion-button ion-button block round type="submit" class="login-btn">
       Login
     </button>
     
   </form>
  
-  <button ion-button block class="facebook-btn" (click)="loginUserWithFacebook()">
-    <ion-icon name="logo-facebook"></ion-icon>
-    Log In with Facebook
-  </button>
   
-  <button ion-button block clear (click)="goToResetPassword()">
-    I forgot my password 🙁
-  </button>
+  <div class="button-container" bottom>
+    
+    
+    <button ion-button block outline round color="dark" (click)="createAccount()" class="login-btn">
+      Create a new account
+    </button>
 
-  <button ion-button block clear (click)="createAccount()">
-    Create a new account
+    <button ion-button block outline round color="dark" (click)="goToResetPassword()" class="login-btn">
+      I forgot my password
+    </button>
+
+    <button ion-button block icon-rigth round class="facebook-btn" (click)="loginUserWithFacebook()" class="login-btn">
+    Continue with Facebook&nbsp;
+    <ion-icon name="logo-facebook"></ion-icon>
   </button>
+  </div>
+  
+
+  
 
 
 </ion-content>

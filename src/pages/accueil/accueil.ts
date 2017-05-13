@@ -20,11 +20,15 @@ export class AccueilPage {
       public trajets : any;
       public trajetsUser : any ; 
      queryText = '';
+     segment: any;
 
 
-  constructor(public dmd : DemandeData ,  public app: App, public navCtrl: NavController, public navParams: NavParams , public annonceData: AnnonceData , public trajetData: TrajetData ) {
+  constructor(public dmd : DemandeData,  public app: App, public navCtrl: NavController, 
+            public navParams: NavParams, public annonceData: AnnonceData, public trajetData: TrajetData ) {
       this.currentUser = firebase.auth().currentUser.uid;
-      this.annonce = firebase.database().ref('/annonces'); }
+      this.annonce = firebase.database().ref('/annonces'); 
+      this.segment = "annonces";
+  }
 
       
   ionViewDidEnter(){
@@ -41,6 +45,7 @@ export class AccueilPage {
           description : snap.val().description ,
           adresse_dep : snap.val().adresse_dep ,
            adresse_arr : snap.val().adresse_arr ,
+           type_obj : snap.val().type_obj 
         });
       return false
         }  });

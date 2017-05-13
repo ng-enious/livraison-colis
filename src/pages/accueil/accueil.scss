@@ -16,11 +16,24 @@ $categories: (
 }
 
 
-page-schedule {
-  @each $track, $value in auxiliary-categories() {
-   ion-item-sliding[track=#{$track}] ion-label {
-     border-left: 2px solid $value;
-     padding-left: 10px;
-   }
-  }
+page-accueil {
+  ion-col.pub-date.col {
+    padding-right: 15px;
+}
+}
+
+.fab[mini] {
+    box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.14), 0 4px 5px rgba(0, 0, 0, 0.1);
+}
+
+ion-card.card {
+    position: relative;
+}
+
+.ion-page > ion-content {
+    position: absolute;
+    background-color: #fcfcfc !important;
+}
+ion-segment.segment {
+    padding: 5px;
 }

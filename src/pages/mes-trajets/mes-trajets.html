@@ -3,45 +3,70 @@
 <ion-header>
   <ion-navbar color="primary" >
    
-     <ion-title> Listes de mes trajets </ion-title>
+     <ion-title>Mes trajets</ion-title>
   
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
+  <ion-fab right bottom>
+    <button ion-fab mini (click)="AddNewT()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab> 
 
-      <ion-fab right bottom >
-  <button ion-fab color="primary" (click)=" AddNewT()" > + </button>
-</ion-fab> 
-  <ion-list>
-    <ion-item *ngFor="let trajet of trajets" >
-      <table>
-        <tr> 
-          <td>
-      <h2>{{trajet?.title}}</h2>
-      <p>Days: <strong>{{trajet?.days}}</strong></p>
-       <p>price: <strong>{{trajet?.price}} dt </strong></p>
-     <p>Adresse depart: <strong>{{trajet?.adresse_dep}}</strong></p>
-     <p>Adresse arrivée: <strong>{{trajet?.adresse_arr}}</strong></p>
-          </td>
-
-           <td>
-    <button ion-button color="primary" icon-left (click)="editTrajet(trajet)">
-          <ion-icon name="ios-create"></ion-icon>
-          Edit
+  <ion-card *ngFor="let trajet of trajets">
+    <ion-card-header>
+      {{trajet?.title}}
+    </ion-card-header>
+    <ion-card-content>
+      <ion-row>
+        <ion-col col-1>
+          <ion-icon name="arrow-round-forward"></ion-icon>
+        </ion-col>
+        <ion-col col-11>
+          {{trajet?.adresse_dep}}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-1>
+          <ion-icon name="arrow-round-back"></ion-icon>
+        </ion-col>
+        <ion-col col-11>
+          {{trajet?.adresse_arr}}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-1>
+          <ion-icon name="time"></ion-icon>
+        </ion-col>
+        <ion-col col-11>
+          {{trajet?.days}}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-1>
+          <ion-icon name="logo-usd"></ion-icon>
+        </ion-col>
+        <ion-col col-11>
+          {{trajet?.price}}
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+    <ion-row>
+      <ion-col>
+        <button ion-button icon-left clear small (click)="editTrajet(trajet)">
+          <ion-icon name="create"></ion-icon>
+          <div>modifier</div>
         </button>
-        </td>
-          <td>
-        <button ion-button color="danger" icon-left (click)="deleteTrajet(trajet)">
-          <ion-icon name="ios-trash"></ion-icon>
-          Delete
-        </button> 
-         </td>
-
-          </tr>
-</table>
-    </ion-item>
-  </ion-list>
-
+      </ion-col>
+      <ion-col center text-right class="pub-date">
+        <button ion-button icon-left clear small color="danger" (click)="deleteTrajet(trajet)">
+          <ion-icon name="trash"></ion-icon>
+          <div>supprimer</div>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
 
 </ion-content>

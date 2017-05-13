@@ -3,6 +3,8 @@ import { NavController} from 'ionic-angular';
 import firebase from 'firebase';
 import { AnnonceData } from '../../providers/annonce-data';
 import { TransportPage } from '../transport/transport';
+import { ListOfDmdPage } from '../list-of-dmd/list-of-dmd';
+
 @Component({
   selector: 'page-mes-annonces',
   templateUrl: 'mes-annonces.html'
@@ -11,9 +13,11 @@ export class MesAnnoncesPage {
  
 
   public annonces : any;
+  public demandes : any;
   public currentUser: string;
 
   constructor(public navCtrl: NavController, public annonceData: AnnonceData ) {
+
 
   }
 
@@ -30,6 +34,7 @@ export class MesAnnoncesPage {
                             user_id : snap.val().user_id, 
                             title : snap.val().title,
                             date: snap.val().date,
+                           demandes : snap.val().demandes , 
                             description : snap.val().description ,
                             adresse_dep : snap.val().adresse_dep ,
                             adresse_arr : snap.val().adresse_arr ,
@@ -39,7 +44,6 @@ export class MesAnnoncesPage {
                         });
                         this.annonces = rawList;
                       });
-
     }
    AddNewA(){
 
@@ -64,5 +68,10 @@ export class MesAnnoncesPage {
    removeA(annonce){
        this.annonceData.deleteAnnonce(annonce);
    }
+
+
+   goToListDmd(annonceid) {
+    this.navCtrl.push(ListOfDmdPage, { annonceId: annonceid } )
+}
 }
 

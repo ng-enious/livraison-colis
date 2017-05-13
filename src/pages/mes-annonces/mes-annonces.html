@@ -16,7 +16,7 @@
 </ion-fab> 
 
   <ion-list>
-    <ion-item *ngFor="let annonce of annonces" >
+    <ion-item *ngFor="let annonce of annonces" (click)="goToListDmd(annonce.id)" >
          <table>
             <tr>
           <td>
@@ -26,6 +26,7 @@
           <p>Type objet  : <strong>{{annonce?.type_obj}}</strong></p>
      <p>Adresse depart : <strong>{{annonce?.adresse_dep}}</strong></p>
      <p>Adresse arrivée: <strong>{{annonce?.adresse_arr}}</strong></p>
+   
     </td>
 
            <td>

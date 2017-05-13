@@ -42,7 +42,8 @@ fireAuth: any;
      return firebase.auth().createUserWithEmailAndPassword(email, password).then((newUser) => {
       firebase.database().ref('/users').child(newUser.uid).set({
         email: email ,
-        password : password
+        password : password,
+        provider : 'email'
       });
     });
   }
@@ -54,10 +55,10 @@ fireAuth: any;
           let provider = firebase.auth.FacebookAuthProvider.credential(facebookData.authResponse.accessToken);
           firebase.auth().signInWithCredential(provider).then(firebaseData => {
             this.af.database.list('users').update(firebaseData.uid, {
-              name: firebaseData.displayName,
+              fullname: firebaseData.displayName,
               email: firebaseData.email,
               provider: 'facebook',
-              image: firebaseData.photoURL
+              avatar : firebaseData.photoURL
             });
             observer.next();
           });
@@ -70,10 +71,11 @@ fireAuth: any;
           method: AuthMethods.Popup
         }).then((facebookData) => {
           this.af.database.list('users').update(facebookData.auth.uid, {
-            name: facebookData.auth.displayName,
+            username : facebookData.auth.displayName, 
+            fullname: facebookData.auth.displayName,
             email: facebookData.auth.email,
             provider: 'facebook',
-            image: facebookData.auth.photoURL
+            avatar: facebookData.auth.photoURL
           });
           observer.next();
         }).catch((error) => {

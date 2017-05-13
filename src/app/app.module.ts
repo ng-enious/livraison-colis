@@ -9,18 +9,19 @@ import { TransportPage } from '../pages/transport/transport';
 import { TrajetPage } from '../pages/trajet/trajet';
 import { TabsPage } from '../pages/tabs/tabs';
 import { AccueilPage } from '../pages/accueil/accueil';
-
+import { ListOfDmdPage } from '../pages/list-of-dmd/list-of-dmd';
 import { StatistiquesPage  } from '../pages/statistiques/statistiques';
 import { AboutPage  } from '../pages/about/about';
 import { MesTrajetsPage } from '../pages/mes-trajets/mes-trajets';
 import { MesAnnoncesPage } from '../pages/mes-annonces/mes-annonces';
-
+import { MissionPage } from '../pages/mission/mission'; 
 
 // Importing Providers
 import { AuthData } from '../providers/auth-data';
 import { AnnonceData} from '../providers/annonce-data';
 import { TrajetData} from '../providers/trajet-data';
 import { ProfileData} from '../providers/profile-data';
+import { DemandeData} from '../providers/demande-data';
 // Importing AF2 Module
 import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
 
@@ -55,8 +56,9 @@ const myFirebaseAuthConfig = {
      MesTrajetsPage  ,
       MesAnnoncesPage ,
       TabsPage,
-  
-      AccueilPage
+  ListOfDmdPage ,
+      AccueilPage ,
+      MissionPage
 
   ],
   imports: [
@@ -66,7 +68,7 @@ const myFirebaseAuthConfig = {
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
- 
+ ListOfDmdPage ,
     Page2,
     LoginPage ,
      ResetPasswordPage,
@@ -78,7 +80,7 @@ const myFirebaseAuthConfig = {
     MesTrajetsPage  ,
     MesAnnoncesPage ,
     TabsPage ,
-    
+    MissionPage ,
     AccueilPage
     
   ],
@@ -86,7 +88,7 @@ const myFirebaseAuthConfig = {
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AuthData , AnnonceData , TrajetData , ProfileData 
+    AuthData , AnnonceData , TrajetData , ProfileData , DemandeData
   ]
 })
 export class AppModule {}

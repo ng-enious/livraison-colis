@@ -40,7 +40,7 @@ export class LoginPage {
     this.authData.loginUser(this.loginForm.value.email, 
       this.loginForm.value.password).then( authData => { 
          this.loading.dismiss().then(() => {
-        this.navCtrl.push(TabsPage);
+        this.navCtrl.setRoot(TabsPage);
   })
 } , error => {
     this.loading.dismiss().then( () => {
@@ -52,16 +52,15 @@ export class LoginPage {
           role: 'cancel'
         }
         ]
-  });
-    alert.present();
-  });
     });
+      alert.present();
+    });
+      });
 
-  this.loading = this.loadingCtrl.create({
- 
-  });
-  this.loading.present();
-  }}
+    this.loading = this.loadingCtrl.create({});
+    this.loading.present();
+  }
+}
 
   goToResetPassword(){
     this.navCtrl.push(ResetPasswordPage);

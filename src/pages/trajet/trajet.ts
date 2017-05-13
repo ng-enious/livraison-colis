@@ -16,9 +16,9 @@ trajet : any ;
 console.log(this.trajet ); 
  }
 
-   createTrajet( trajetTitle: string,   adDep : string , adArr: string ,  date: string , price : string ){
+   createTrajet(trajetId : string ,  trajetTitle: string,   adDep : string , adArr: string ,  date: string , price : string ){
 
-      if(!(this.trajet.id)){
+      if(!(trajetId)){
     this.trajetData.createTrajet( trajetTitle,  adDep , adArr   ,date , price ).then( () => {
       this.navCtrl.setRoot(MesTrajetsPage);
     })}

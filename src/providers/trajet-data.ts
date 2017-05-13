@@ -32,7 +32,7 @@ export class TrajetData {
  updateTrajet( trajetId : string , trajetTitle: string ,  adDep : string , adArr: string ,  date: string , 
      price : string): firebase.Promise<any> {
      return this.trajetList.child(trajetId).update( {
-           title : trajetTitle ,
+      title : trajetTitle ,
       adresse_dep : adDep  ,
       adresse_arr  :  adArr ,
       days : date , 

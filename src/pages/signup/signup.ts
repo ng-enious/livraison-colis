@@ -35,7 +35,7 @@ us : FirebaseListObservable <any> ;
        this.signupForm.value.password)
       .then( authData => { 
          this.loading.dismiss().then(() => {
-        this.nav.push(TabsPage);
+        this.nav.setRoot(TabsPage)
       })
 } , error => {
     this.loading.dismiss().then( () => {

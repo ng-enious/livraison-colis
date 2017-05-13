@@ -7,15 +7,9 @@ import {AuthData} from  '../providers/auth-data';
 import { TabsPage } from '../pages/tabs/tabs';
 
 
-//import { Page2 } from '../pages/page2/page2';
-// import { TrajetPage } from '../pages/trajet/trajet';
-// import { TransportPage } from '../pages/transport/transport';
-// import { MesTrajetsPage } from '../pages/mes-trajets/mes-trajets';
-// import { MesAnnoncesPage } from '../pages/mes-annonces/mes-annonces';
-// import { StatistiquesPage } from '../pages/statistiques/statistiques';
 
 import { AngularFire } from 'angularfire2';
-//import firebase from 'firebase';
+
 
 
 @Component({
@@ -57,16 +51,6 @@ export class MyApp {
   
 
 
-    // used for an example of ngFor and navigation
-    // this.pages = [
-    //  { title: 'Accueil', component: TabsPage  },
-    //   { title: 'Liste de mes trajets ', component:  MesTrajetsPage   } ,
-    //   { title: 'Liste de mes annonces', component: MesAnnoncesPage  } ,
-    //    { title: 'Ajouter un trajet ', component:  TrajetPage  } ,
-    //   { title: 'Ajouter une annonce  ', component:  TransportPage } ,
-    //   { title: 'Settings ', component:  StatistiquesPage   } ,
-
-    // ];
 
   }
 
@@ -78,10 +62,6 @@ export class MyApp {
     });
   }
 
-//   openPage(page) {
 
-
-//   this.nav.setRoot(page.component) ; 
-// }
  
 }

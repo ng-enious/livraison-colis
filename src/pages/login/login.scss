@@ -1,29 +1,29 @@
 page-login {
-    
 
-    p {
-        font-size: 0.8em;
-        color: #d2d2d2;
-    }
 
-    ion-label {
-        margin-left: 5px;
-    }
+        p {
+            font-size: 0.8e m;
+            color : #d2d2d2;
+        }
 
-    ion-input {
-        padding: 5px;
-    }
+        ion-label {
+            margin-left: 5 px;
+        }
 
-    .invalid {
-        border-bottom: 1px solid #FF6153;
-    }
+        ion-input {
+                padding: 5 px;
+            }
 
-    .error-message .item-inner {
-        border-bottom: 0 !important;
-    }
+            .invalid {
+                border-bottom:1 px solid#FF6153;
+            }
 
-      .facebook-btn {
-    background-color: #3b5998;
+            .error-message.item-inner {
+                border-bottom:0!important;
+            }
+
+            .facebook-btn {
+                background-color: #3b5998;
     margin: auto;
     width: 95%;
     margin-bottom: 5px;

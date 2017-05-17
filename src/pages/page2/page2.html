@@ -1,131 +1,130 @@
 <ion-header>
-  <ion-navbar color="primary">
-    
-    <ion-title>Mon profil</ion-title>
-    <ion-buttons end>
+    <ion-navbar color="primary">
+
+        <ion-title>Mon profil</ion-title>
+        <ion-buttons end>
 
 
-        <button ion-button (click)="openImageOptions()">
+            <button ion-button (click)="openImageOptions()">
             <ion-icon name="camera"></ion-icon>
       </button>
 
-      <button ion-button icon-only (click)=" logoutApp()">
+            <button ion-button icon-only (click)=" logoutApp()">
         <ion-icon name="log-out"></ion-icon>
       </button>
 
-     
-         
-    </ion-buttons>
-  </ion-navbar>
+
+
+        </ion-buttons>
+    </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-   <div *ngIf="!userDataLoaded">
+    <div *ngIf="!userDataLoaded">
         <img src="assets/images/ring.gif" style="display:block; margin:auto" />
     </div>
-    
-  <ion-list>
-    <ion-list-header>
-      Personal Information
-    </ion-list-header>
 
-    <ion-item (click)="updateUserName()">
-      <ion-grid>
-        <ion-row>
-          <ion-col width-50>
-            UserName
-          </ion-col>
-          <ion-col *ngIf="users?.username">
-            {{users?.username}}
-          </ion-col>
-          <ion-col class="placeholder-profile" *ngIf="!users?.username">
-            <span>
+    <ion-list>
+        <ion-list-header>
+            Personal Information
+        </ion-list-header>
+
+        <ion-item (click)="updateUserName()">
+            <ion-grid>
+                <ion-row>
+                    <ion-col width-50>
+                        UserName
+                    </ion-col>
+                    <ion-col *ngIf="users?.username">
+                        {{users?.username}}
+                    </ion-col>
+                    <ion-col class="placeholder-profile" *ngIf="!users?.username">
+                        <span>
               Tap here to edit.
             </span>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    </ion-item>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-item>
 
 
-     <ion-item (click)="updateFullName()">
-      <ion-grid>
-        <ion-row>
-          <ion-col width-50>
-            FullName
-          </ion-col>
-          <ion-col *ngIf="users?.fullname">
-            {{users?.fullname}}
-          </ion-col>
-          <ion-col class="placeholder-profile" *ngIf="!users?.fullname">
-            <span>
+        <ion-item (click)="updateFullName()">
+            <ion-grid>
+                <ion-row>
+                    <ion-col width-50>
+                        FullName
+                    </ion-col>
+                    <ion-col *ngIf="users?.fullname">
+                        {{users?.fullname}}
+                    </ion-col>
+                    <ion-col class="placeholder-profile" *ngIf="!users?.fullname">
+                        <span>
               Tap here to edit.
             </span>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    </ion-item>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-item>
 
-  
-    <ion-item (click)="updatePassword()">
-      <ion-grid>
-        <ion-row>
-          <ion-col width-50>
-            Password
-          </ion-col>
-          <ion-col class="placeholder-profile">
-            <span>
+
+        <ion-item (click)="updatePassword()">
+            <ion-grid>
+                <ion-row>
+                    <ion-col width-50>
+                        Password
+                    </ion-col>
+                    <ion-col class="placeholder-profile">
+                        <span>
               Tap here to edit.
             </span>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    </ion-item>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-item>
 
-<ion-item (click)="updateEmail()">
-      <ion-grid>
-        <ion-row>
-          <ion-col width-50>
-            Email
-          </ion-col>
-          <ion-col width-50 *ngIf="users?.email">
-            {{users?.email}}
-          </ion-col>
-          <ion-col class="placeholder-profile" *ngIf="!users?.email">
-            <span>
+        <ion-item (click)="updateEmail()">
+            <ion-grid>
+                <ion-row>
+                    <ion-col width-50>
+                        Email
+                    </ion-col>
+                    <ion-col width-50 *ngIf="users?.email">
+                        {{users?.email}}
+                    </ion-col>
+                    <ion-col class="placeholder-profile" *ngIf="!users?.email">
+                        <span>
               Tap here to edit.
             </span>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    </ion-item>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-item>
 
 
-<ion-item (click)="updatePhoneNumber()">
-      <ion-grid>
-        <ion-row>
-          <ion-col width-50>
-            Phone number
-          </ion-col>
-          <ion-col *ngIf="users?.phone">
-            {{users?.phone}}
-          </ion-col>
-          <ion-col class="placeholder-profile" *ngIf="!users?.phone">
-            <span>
+        <ion-item (click)="updatePhoneNumber()">
+            <ion-grid>
+                <ion-row>
+                    <ion-col width-50>
+                        Phone number
+                    </ion-col>
+                    <ion-col *ngIf="users?.phone">
+                        {{users?.phone}}
+                    </ion-col>
+                    <ion-col class="placeholder-profile" *ngIf="!users?.phone">
+                        <span>
               Tap here to edit.
             </span>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    </ion-item>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-item>
 
-    <ion-item>
-      <ion-label class="dob-label">Date of Birth</ion-label>
-      <ion-datetime displayFormat="MMM D, YYYY" pickerFormat="D MMM YYYY"
-        [(ngModel)]="birthDate" (ionChange)="updateDOB(birthDate)"></ion-datetime>
-    </ion-item>
+        <ion-item>
+            <ion-label class="dob-label">Date of Birth</ion-label>
+            <ion-datetime displayFormat="MMM D, YYYY" pickerFormat="D MMM YYYY" [(ngModel)]="birthDate" (ionChange)="updateDOB(birthDate)"></ion-datetime>
+        </ion-item>
 
-    
-    
-  </ion-list>
+
+
+    </ion-list>
 </ion-content>

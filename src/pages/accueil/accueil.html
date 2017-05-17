@@ -2,7 +2,7 @@
     <ion-toolbar color="primary">
         <ion-title> Accueil </ion-title>
         <ion-buttons end>
-          <button ion-button icon-only>
+            <button ion-button icon-only>
             <ion-icon name="search"></ion-icon>
           </button>
         </ion-buttons>
@@ -17,119 +17,119 @@
     </ion-segment>
 </ion-header>
 <ion-content style="margin-top: 5px;">
-  <div [ngSwitch]="segment">
-      <ion-list *ngSwitchCase="'annonces'">
-          <ion-card *ngFor="let annonce of annonces">
-            <ion-item>
-              <ion-avatar item-left>
-                <img src="assets/img/logo.png">
-              </ion-avatar>
-              <h2>{{annonce?.title}}</h2>
-              <p>{{annonce?.date}}</p>
-            </ion-item>
-            <ion-card-content>
-              <ion-row>
-                <p>{{annonce?.description}}</p>
-              </ion-row>
-              <ion-row>
-                <ion-col col-1>
-                  <ion-icon name="arrow-round-forward"></ion-icon>
-                </ion-col>
-                <ion-col col-11>
-                  {{annonce?.adresse_dep}}
-                </ion-col>
-              </ion-row>
-              <ion-row>
-                <ion-col col-1>
-                  <ion-icon name="arrow-round-back"></ion-icon>
-                </ion-col>
-                <ion-col col-11>
-                  {{annonce?.adresse_arr}}
-                </ion-col>
-              </ion-row>
-              <ion-row>
-                <ion-col col-1>
-                  <ion-icon name="time"></ion-icon>
-                </ion-col>
-                <ion-col col-11>
-                  {{annonce?.date}}
-                </ion-col>
-              </ion-row>
-              <ion-row>
-                <ion-col col-1>
-                  <ion-icon name="archive"></ion-icon>
-                </ion-col>
-                <ion-col col-11>
-                  {{annonce?.type_obj}}
-                </ion-col>
-              </ion-row>
-            </ion-card-content>
-            <ion-row>
-              <ion-col>
-                <button ion-button icon-left clear small (click)="envoieDemande(annonce)">
+    <div [ngSwitch]="segment">
+        <ion-list *ngSwitchCase="'annonces'">
+            <ion-card *ngFor="let annonce of annonces">
+                <ion-item>
+                    <ion-avatar item-left>
+                        <img src="assets/img/logo.png">
+                    </ion-avatar>
+                    <h2>{{annonce?.title}}</h2>
+                    <p>{{annonce?.date}}</p>
+                </ion-item>
+                <ion-card-content>
+                    <ion-row>
+                        <p>{{annonce?.description}}</p>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col col-1>
+                            <ion-icon name="arrow-round-forward"></ion-icon>
+                        </ion-col>
+                        <ion-col col-11>
+                            {{annonce?.adresse_dep}}
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col col-1>
+                            <ion-icon name="arrow-round-back"></ion-icon>
+                        </ion-col>
+                        <ion-col col-11>
+                            {{annonce?.adresse_arr}}
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col col-1>
+                            <ion-icon name="time"></ion-icon>
+                        </ion-col>
+                        <ion-col col-11>
+                            {{annonce?.date}}
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col col-1>
+                            <ion-icon name="archive"></ion-icon>
+                        </ion-col>
+                        <ion-col col-11>
+                            {{annonce?.type_obj}}
+                        </ion-col>
+                    </ion-row>
+                </ion-card-content>
+                <ion-row>
+                    <ion-col>
+                        <button ion-button icon-left clear small (click)="envoieDemande(annonce)">
                   <ion-icon name="send"></ion-icon>
                   <div>envoyer demande</div>
                 </button>
-              </ion-col>
-              <ion-col center text-right class="pub-date">
-                <ion-note>
-                  11h ago
-                </ion-note>
-              </ion-col>
-            </ion-row>
-          </ion-card>
-      </ion-list>
+                    </ion-col>
+                    <ion-col center text-right class="pub-date">
+                        <ion-note>
+                            11h ago
+                        </ion-note>
+                    </ion-col>
+                </ion-row>
+            </ion-card>
+        </ion-list>
 
-<ion-list *ngSwitchCase="'trajets'">
-  <ion-card *ngFor="let trajet of trajets" >
-    <img src="assets/img/map2.png">
-    <ion-fab right top>
-      <button ion-fab mini>
+        <ion-list *ngSwitchCase="'trajets'">
+            <ion-card *ngFor="let trajet of trajets">
+                <img src="assets/img/map2.png">
+                <ion-fab right top>
+                    <button ion-fab mini>
         <ion-icon name="pin"></ion-icon>
       </button>
-    </ion-fab>
+                </ion-fab>
 
-    <ion-item>
-      <ion-avatar item-left>
-       <ion-icon name="walk" item-left large></ion-icon>
-      </ion-avatar>
-      <h2>{{trajet?.title}}</h2>
-      <p>{{trajet?.days}}</p>
-    </ion-item>
-    <ion-card-content>
-      <ion-row>
-        <ion-col col-1>
-          <ion-icon name="arrow-round-forward"></ion-icon>
-        </ion-col>
-        <ion-col col-11>
-          {{trajet?.adresse_dep}}
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col col-1>
-          <ion-icon name="arrow-round-back"></ion-icon>
-        </ion-col>
-        <ion-col col-11>
-          {{trajet?.adresse_arr}}
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col col-1>
-          <ion-icon name="logo-usd"></ion-icon>
-        </ion-col>
-        <ion-col col-11>
-          {{trajet?.price}} dt
-        </ion-col>
-      </ion-row>
-    </ion-card-content>
-  </ion-card>
-</ion-list>
- <!--<ion-item *ngFor="let trajet of trajets">
+                <ion-item>
+                    <ion-avatar item-left>
+                        <ion-icon name="walk" item-left large></ion-icon>
+                    </ion-avatar>
+                    <h2>{{trajet?.title}}</h2>
+                    <p>{{trajet?.days}}</p>
+                </ion-item>
+                <ion-card-content>
+                    <ion-row>
+                        <ion-col col-1>
+                            <ion-icon name="arrow-round-forward"></ion-icon>
+                        </ion-col>
+                        <ion-col col-11>
+                            {{trajet?.adresse_dep}}
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col col-1>
+                            <ion-icon name="arrow-round-back"></ion-icon>
+                        </ion-col>
+                        <ion-col col-11>
+                            {{trajet?.adresse_arr}}
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col col-1>
+                            <ion-icon name="logo-usd"></ion-icon>
+                        </ion-col>
+                        <ion-col col-11>
+                            {{trajet?.price}} dt
+                        </ion-col>
+                    </ion-row>
+                </ion-card-content>
+            </ion-card>
+        </ion-list>
+        <!--<ion-item *ngFor="let trajet of trajets">
         <h2>{{trajet?.title}}</h2>
         <p>Day: <strong>{{trajet?.days}}</strong></p>
         <p>Adresse départ: <strong>{{trajet?.adresse_dep}}</strong></p>
         <p>Adresse arrivée: <strong>{{trajet?.adresse_arr}}</strong></p>
         <p>price: <strong>{{trajet?.price}} dt </strong></p>
     </ion-item>-->
-  </div>
+    </div>
 </ion-content>

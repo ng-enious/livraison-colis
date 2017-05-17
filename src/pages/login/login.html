@@ -1,69 +1,38 @@
-<!-- <ion-header>
-  <ion-navbar hide-tabs color="primary" >
-  <ion-title>
-    CoColis
-    </ion-title>
-  
-  </ion-navbar>
-</ion-header> -->
-
-
 <ion-content padding hide-tabs class="login-container">
-   
-<img src="assets/img/logo-black.png" class="auth-img">
-
-  <form [formGroup]="loginForm" (submit)="loginUser()" novalidate>
-
-    <ion-item>
-      <ion-label stacked>Email</ion-label>
-      <ion-input #email formControlName="email" type="email" (change)="(email)"
-        placeholder="Your email address"
-        [class.invalid]="!loginForm.controls.email.valid &&
+    <img src="assets/img/logo-black.png" class="auth-img">
+    <form [formGroup]="loginForm" (submit)="loginUser()" novalidate>
+        <ion-item>
+            <ion-label stacked>Email</ion-label>
+            <ion-input #email formControlName="email" type="email" (change)="(email)" placeholder="Your email address" [class.invalid]="!loginForm.controls.email.valid &&
           loginForm.controls.email.dirty"></ion-input>
-    </ion-item>
-    <ion-item class="error-message" *ngIf="!loginForm.controls.email.valid  &&
+        </ion-item>
+        <ion-item class="error-message" *ngIf="!loginForm.controls.email.valid  &&
       loginForm.controls.email.dirty">
-      <p>Please enter a valid email.</p>
-    </ion-item>
-
-    <ion-item>
-      <ion-label stacked>Password</ion-label>
-      <ion-input #password formControlName="password" type="password"
-        (change)="(password)"
-        placeholder="Your password"
-        [class.invalid]="!loginForm.controls.password.valid &&
+            <p>Please enter a valid email.</p>
+        </ion-item>
+        <ion-item>
+            <ion-label stacked>Password</ion-label>
+            <ion-input #password formControlName="password" type="password" (change)="(password)" placeholder="Your password" [class.invalid]="!loginForm.controls.password.valid &&
           loginForm.controls.password.dirty"></ion-input>
-    </ion-item>
-    <ion-item class="error-message" *ngIf="!loginForm.controls.password.valid  &&
+        </ion-item>
+        <ion-item class="error-message" *ngIf="!loginForm.controls.password.valid  &&
       loginForm.controls.password.dirty">
-      <p>Your password needs more than 6 characters.</p>
-    </ion-item>
-    <button ion-button ion-button block round type="submit" class="login-btn">
+            <p>Your password needs more than 6 characters.</p>
+        </ion-item>
+        <button ion-button ion-button block round type="submit" class="login-btn">
       Login
     </button>
-    
-  </form>
- 
-  
-  <div class="button-container" bottom>
-    
-    
-    <button ion-button block outline round color="dark" (click)="createAccount()" class="login-btn">
+    </form>
+    <div class="button-container" bottom>
+        <button ion-button block outline round color="dark" (click)="createAccount()" class="login-btn">
       Create a new account
     </button>
-
-    <button ion-button block outline round color="dark" (click)="goToResetPassword()" class="login-btn">
+        <button ion-button block outline round color="dark" (click)="goToResetPassword()" class="login-btn">
       I forgot my password
     </button>
-
-    <button ion-button block icon-rigth round class="facebook-btn" (click)="loginUserWithFacebook()" class="login-btn">
+        <button ion-button block icon-rigth round class="facebook-btn" (click)="loginUserWithFacebook()" class="login-btn">
     Continue with Facebook&nbsp;
     <ion-icon name="logo-facebook"></ion-icon>
   </button>
-  </div>
-  
-
-  
-
-
+    </div>
 </ion-content>

@@ -10,7 +10,6 @@ import { TrajetPage } from '../pages/trajet/trajet';
 import { TabsPage } from '../pages/tabs/tabs';
 import { AccueilPage } from '../pages/accueil/accueil';
 import { ListOfDmdPage } from '../pages/list-of-dmd/list-of-dmd';
-import { StatistiquesPage  } from '../pages/statistiques/statistiques';
 import { AboutPage  } from '../pages/about/about';
 import { MesTrajetsPage } from '../pages/mes-trajets/mes-trajets';
 import { MesAnnoncesPage } from '../pages/mes-annonces/mes-annonces';
@@ -43,52 +42,54 @@ const myFirebaseAuthConfig = {
 }
 
 @NgModule({
-  declarations: [
-    MyApp,
-    Page2,
-    LoginPage,
-    ResetPasswordPage,
-    SignupPage ,
-    TransportPage ,
-    TrajetPage ,
-    StatistiquesPage ,
-    AboutPage ,
-     MesTrajetsPage  ,
-      MesAnnoncesPage ,
-      TabsPage,
-  ListOfDmdPage ,
-      AccueilPage ,
-      MissionPage
+    declarations: [
+        MyApp,
+        Page2,
+        LoginPage,
+        ResetPasswordPage,
+        SignupPage,
+        TransportPage,
+        TrajetPage,
 
-  ],
-  imports: [
-    IonicModule.forRoot(MyApp),
-    AngularFireModule.initializeApp(firebaseConfig, myFirebaseAuthConfig)
-  ],
-  bootstrap: [IonicApp],
-  entryComponents: [
-    MyApp,
- ListOfDmdPage ,
-    Page2,
-    LoginPage ,
-     ResetPasswordPage,
-    SignupPage ,
-    TransportPage ,
-    TrajetPage ,
-    StatistiquesPage ,
-    AboutPage ,
-    MesTrajetsPage  ,
-    MesAnnoncesPage ,
-    TabsPage ,
-    MissionPage ,
-    AccueilPage
-    
-  ],
-  providers: [
-    StatusBar,
-    SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AuthData , AnnonceData , TrajetData , ProfileData , DemandeData
-  ]
+        AboutPage,
+        MesTrajetsPage,
+        MesAnnoncesPage,
+        TabsPage,
+        ListOfDmdPage,
+        AccueilPage,
+        MissionPage
+
+    ],
+    imports: [
+        IonicModule.forRoot(MyApp),
+        AngularFireModule.initializeApp(firebaseConfig, myFirebaseAuthConfig)
+    ],
+    bootstrap: [IonicApp],
+    entryComponents: [
+        MyApp,
+        ListOfDmdPage,
+        Page2,
+        LoginPage,
+        ResetPasswordPage,
+        SignupPage,
+        TransportPage,
+        TrajetPage,
+        AboutPage,
+        MesTrajetsPage,
+        MesAnnoncesPage,
+        TabsPage,
+        MissionPage,
+        AccueilPage
+
+    ],
+    providers: [
+        StatusBar,
+        SplashScreen,
+        {
+            provide: ErrorHandler,
+            useClass: IonicErrorHandler
+        },
+        AuthData, AnnonceData, TrajetData, ProfileData, DemandeData
+    ]
 })
 export class AppModule {}

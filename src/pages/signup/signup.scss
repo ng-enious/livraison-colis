@@ -1,11 +1,4 @@
 page-signup {
-    .weather-home {
-    background-image: url('img/ecran1.jpg');
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    flex: 1;
-    flex-direction: column;
-} 
     form {
         margin-bottom: 32px;
         button {
@@ -32,5 +25,15 @@ page-signup {
 
     .error-message .item-inner {
         border-bottom: 0 !important;
-    }
+    }.login-btn {
+    margin-top: 5px;
+  }
+
+    //  img.signup-img {
+    //     width: 40%;
+    //     margin-left: 30%;
+    //     padding: 30px 0px
+    // }
+
+
 }

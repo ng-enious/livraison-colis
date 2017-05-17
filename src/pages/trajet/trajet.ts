@@ -5,33 +5,33 @@ import { TrajetData } from '../../providers/trajet-data';
 import { MesTrajetsPage } from '../mes-trajets/mes-trajets';
 
 @Component({
-  selector: 'page-trajet',
-  templateUrl: 'trajet.html'
+    selector: 'page-trajet',
+    templateUrl: 'trajet.html'
 })
 export class TrajetPage {
-trajet : any ;  
- constructor(public navCtrl: NavController, public trajetData: TrajetData , public navParams: NavParams) {
+    trajet: any;
+    constructor(public navCtrl: NavController, public trajetData: TrajetData, public navParams: NavParams) {
 
- this.trajet = this.navParams.data.trajetE ;
-console.log(this.trajet ); 
- }
+        this.trajet = this.navParams.data.trajetE;
+        console.log(this.trajet);
+    }
 
-   createTrajet(trajetId : string ,  trajetTitle: string,   adDep : string , adArr: string ,  date: string , price : string ){
+    createTrajet(trajetId: string, trajetTitle: string, adDep: string, adArr: string, date: string, price: string) {
 
-      if(!(trajetId)){
-    this.trajetData.createTrajet( trajetTitle,  adDep , adArr   ,date , price ).then( () => {
-      this.navCtrl.setRoot(MesTrajetsPage);
-    })}
+        if (!(trajetId)) {
+            this.trajetData.createTrajet(trajetTitle, adDep, adArr, date, price).then(() => {
+                this.navCtrl.setRoot(MesTrajetsPage);
+            })
+        } else {
 
-   else { 
+            this.trajetData.updateTrajet(this.trajet.id, trajetTitle, adDep, adArr, date, price).then(() => {
+                this.navCtrl.setRoot(MesTrajetsPage);
 
-    this.trajetData.updateTrajet(this.trajet.id ,  trajetTitle,  adDep , adArr   ,date , price ).then( () => {
-    this.navCtrl.setRoot(MesTrajetsPage);
+            })
+        }
 
-      })
- }
-     
- } }
+    }
+}
  
 
 

@@ -1,14 +1,14 @@
 $categories: (
- ionic: color($colors, primary),
- angular: #AC282B,
- communication: #8E8D93,
+    ionic: color($colors, primary),
+    angular: #AC282B,
+    communication: #8E8D93,
  tooling: #FE4C52,
- services: #FD8B2D,
- design: #FED035,
- workshop: #69BB7B,
+    services: #FD8B2D,
+    design: #FED035,
+    workshop: #69BB7B,
  food: #3BC7C4,
- documentation: #B16BE3,
- navigation: #6600CC,
+    documentation: #B16BE3,
+    navigation: #6600CC,
 );
 
 @function auxiliary-categories() {
@@ -32,8 +32,8 @@ ion-card.card {
 
 .ion-page > ion-content {
     position: absolute;
-    background-color: #fcfcfc !important;
+    background-color: #fcfcfc!important;
 }
 ion-segment.segment {
-    padding: 5px;
+    padding: 5 px;
 }

@@ -24539,27 +24539,27 @@ ion-card.card {
 }
 
 ion-segment.segment {
-  padding: 5px;
+  padding: 5 px;
 }
 
 page-login p {
-  font-size: 0.8em;
+  font-size: 0.8e m;
   color: #d2d2d2;
 }
 
 page-login ion-label {
-  margin-left: 5px;
+  margin-left: 5 px;
 }
 
 page-login ion-input {
-  padding: 5px;
+  padding: 5 px;
 }
 
 page-login .invalid {
-  border-bottom: 1px solid #FF6153;
+  border-bottom: 1 px solid #FF6153;
 }
 
-page-login .error-message .item-inner {
+page-login .error-message.item-inner {
   border-bottom: 0 !important;
 }
 
@@ -24616,16 +24616,10 @@ page-reset-password .error-message .item-inner {
   border-bottom: 0 !important;
 }
 
-page-signup .weather-home {
-  background-image: url("img/ecran1.jpg");
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+page-reset-password img.reset-img {
+  width: 40%;
+  margin-left: 30%;
+  padding: 30px 0px;
 }
 
 page-signup form {
@@ -24655,6 +24649,10 @@ page-signup .invalid {
 
 page-signup .error-message .item-inner {
   border-bottom: 0 !important;
+}
+
+page-signup .login-btn {
+  margin-top: 5px;
 }
 
 page-transport ion-item {

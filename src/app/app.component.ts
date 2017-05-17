@@ -12,56 +12,56 @@ import { AngularFire } from 'angularfire2';
 
 
 
+
 @Component({
-  templateUrl: 'app.html'
+    templateUrl: 'app.html'
 })
 export class MyApp {
-  
-  @ViewChild(Nav) nav: Nav;
 
-  rootPage: any  ;
-  fireAuth: any;
+    @ViewChild(Nav) nav: Nav;
 
-
-  constructor(public platform: Platform ,public af: AngularFire ,
-  public statusBar: StatusBar, public splashScreen: SplashScreen , public authData : AuthData) {
+    rootPage: any;
+    fireAuth: any;
 
 
-   
+    constructor(public platform: Platform, public af: AngularFire,
+        public statusBar: StatusBar, public splashScreen: SplashScreen, public authData: AuthData) {
 
-     af.auth.subscribe( user => {
+
+
+
+        af.auth.subscribe(user => {
             if (user) {
                 this.fireAuth = user.auth;
                 console.log(user);
             }
         });
 
-     const authObserver = af.auth.subscribe( user => {
-     
-      if (user) {
-        this.rootPage = TabsPage;
-        authObserver.unsubscribe();
-      
-      } else {
-        this.rootPage = LoginPage;
-        authObserver.unsubscribe();
-      }
-   });
-    
-  
+        const authObserver = af.auth.subscribe(user => {
+
+            if (user) {
+                this.rootPage = TabsPage;
+                authObserver.unsubscribe();
+
+            } else {
+                this.rootPage = LoginPage;
+                authObserver.unsubscribe();
+            }
+        });
 
 
 
-  }
 
-  initializeApp() {
-    this.platform.ready().then(() => {
-      
-      this.statusBar.styleDefault();
-      this.splashScreen.hide();
-    });
-  }
+    }
+
+    initializeApp() {
+        this.platform.ready().then(() => {
+
+            this.statusBar.styleDefault();
+            this.splashScreen.hide();
+        });
+    }
 
 
- 
+
 }

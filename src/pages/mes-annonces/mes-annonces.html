@@ -1,78 +1,72 @@
 <ion-header>
-    <ion-navbar color="primary">
-        <ion-title>Mes annonces</ion-title>
-    </ion-navbar>
+   <ion-navbar color="primary">
+      <ion-title>Mes annonces</ion-title>
+   </ion-navbar>
 </ion-header>
-
-
 <ion-content>
-    <ion-fab right bottom>
-        <button ion-fab mini (click)="AddNewA()">
-        <ion-icon name="add"></ion-icon>
+   <ion-fab right bottom>
+      <button ion-fab mini (click)="AddNewA()">
+         <ion-icon name="add"></ion-icon>
       </button>
-    </ion-fab>
-
-    <ion-card *ngFor="let annonce of annonces" (click)="goToListDmd(annonce.id)">
-        <ion-item>
-            <ion-avatar item-left>
-                <img src="assets/img/logo.png">
-            </ion-avatar>
-            <h2>{{annonce?.title}}</h2>
-            <p>{{annonce?.date}}</p>
-        </ion-item>
-        <ion-card-content>
-            <ion-row>
-                <p>{{annonce?.description}}</p>
-            </ion-row>
-            <ion-row>
-                <ion-col col-1>
-                    <ion-icon name="arrow-round-forward"></ion-icon>
-                </ion-col>
-                <ion-col col-11>
-                    {{annonce?.adresse_dep}}
-                </ion-col>
-            </ion-row>
-            <ion-row>
-                <ion-col col-1>
-                    <ion-icon name="arrow-round-back"></ion-icon>
-                </ion-col>
-                <ion-col col-11>
-                    {{annonce?.adresse_arr}}
-                </ion-col>
-            </ion-row>
-            <ion-row>
-                <ion-col col-1>
-                    <ion-icon name="time"></ion-icon>
-                </ion-col>
-                <ion-col col-11>
-                    {{annonce?.date}}
-                </ion-col>
-            </ion-row>
-            <ion-row>
-                <ion-col col-1>
-                    <ion-icon name="archive"></ion-icon>
-                </ion-col>
-                <ion-col col-11>
-                    {{annonce?.type_obj}}
-                </ion-col>
-            </ion-row>
-        </ion-card-content>
-        
-        <ion-row>
-            <ion-col>
-                <button ion-button icon-left clear small (click)="edit(annonce)">
-          <ion-icon name="create"></ion-icon>
-          <div>modifier</div>
-        </button>
-            </ion-col>
-            <ion-col center text-right class="pub-date">
-                <button ion-button icon-left clear small color="danger" (click)="removeA(annonce)">
-          <ion-icon name="trash"></ion-icon>
-          <div>supprimer</div>
-        </button>
-            </ion-col>
-        </ion-row>
-    
-    </ion-card>
-
+   </ion-fab>
+   <ion-card *ngFor="let annonce of annonces">
+   <ion-item>
+      <ion-avatar item-left>
+         <img src="assets/img/logo.png">
+      </ion-avatar>
+      <h2>{{annonce?.title}}</h2>
+      <p>{{annonce?.date}}</p>
+   </ion-item>
+   <ion-card-content (click)="goToListDmd(annonce.id)">
+      <ion-row>
+         <p>{{annonce?.description}}</p>
+      </ion-row>
+      <ion-row>
+         <ion-col col-1>
+            <ion-icon name="arrow-round-forward"></ion-icon>
+         </ion-col>
+         <ion-col col-11>
+            {{annonce?.adresse_dep}}
+         </ion-col>
+      </ion-row>
+      <ion-row>
+         <ion-col col-1>
+            <ion-icon name="arrow-round-back"></ion-icon>
+         </ion-col>
+         <ion-col col-11>
+            {{annonce?.adresse_arr}}
+         </ion-col>
+      </ion-row>
+      <ion-row>
+         <ion-col col-1>
+            <ion-icon name="time"></ion-icon>
+         </ion-col>
+         <ion-col col-11>
+            {{annonce?.date}}
+         </ion-col>
+      </ion-row>
+      <ion-row>
+         <ion-col col-1>
+            <ion-icon name="archive"></ion-icon>
+         </ion-col>
+         <ion-col col-11>
+            {{annonce?.type_obj}}
+         </ion-col>
+      </ion-row>
+   </ion-card-content>
+   <ion-row>
+      <ion-col>
+         <button ion-button icon-left clear small (click)="edit(annonce)">
+            <ion-icon name="create"></ion-icon>
+            <div>modifier</div>
+         </button>
+      </ion-col>
+      <ion-col center text-right class="pub-date">
+         <button ion-button icon-left clear small color="danger" (click)="removeA(annonce)">
+            <ion-icon name="trash"></ion-icon>
+            <div>supprimer</div>
+         </button>
+      </ion-col>
+   </ion-row>
+   </ion-card>
 </ion-content>

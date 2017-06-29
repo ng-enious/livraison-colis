@@ -4,11 +4,6 @@
         <ion-title>Mon profil</ion-title>
         <ion-buttons end>
 
-
-            <button ion-button (click)="openImageOptions()">
-            <ion-icon name="camera"></ion-icon>
-      </button>
-
             <button ion-button icon-only (click)=" logoutApp()">
         <ion-icon name="log-out"></ion-icon>
       </button>
@@ -19,11 +14,7 @@
     </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-    <div *ngIf="!userDataLoaded">
-        <img src="assets/images/ring.gif" style="display:block; margin:auto" />
-    </div>
-
+<ion-content padding> 
     <ion-list>
         <ion-list-header>
             Personal Information

@@ -9,30 +9,26 @@ import firebase from 'firebase';
   Ionic pages and navigation.
 */
 @Component({
-    selector: 'page-mission',
-    templateUrl: 'mission.html'
+  selector: 'page-mission',
+  templateUrl: 'mission.html'
 })
 export class MissionPage {
-    dmdtrajet: any;
-    annonceCurentid: any;
-    dmdtrajetUser: any;
-    demandeDetails: firebase.database.Reference;
-    dmdId: any;
+  demande : any ;
+  annonce :  firebase.database.Reference ;
+  dmdId : any ; 
 
 
 
-    constructor(public navCtrl: NavController, public navParams: NavParams) {
-        this.dmdtrajet = this.navParams.data.t;
-        this.dmdtrajetUser = this.navParams.data.u;
-        this.annonceCurentid = this.navParams.data.annonce;
-        this.dmdId = this.navParams.data.dmId;
-        this.demandeDetails = firebase.database().ref(`annonces/${this.annonceCurentid}/demandes/${this.dmdId}`);
-    }
-
-
-
-    ionViewDidLoad() {
-        console.log('ionViewDidLoad MissionPage');
-    }
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+      this.demande = this.navParams.data.demande;
+     firebase.database().ref(`annonces/${this.demande.annonceId}`).on('value', (item: any) => {
+         this.annonce = item.val();
+      }, (error) => {
+          console.log(error);
+      });
+  }
+  
+  ionViewDidLoad() {
+  }
 
 }

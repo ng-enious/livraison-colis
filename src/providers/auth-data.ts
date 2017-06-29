@@ -35,12 +35,13 @@ export class AuthData {
         return this.af.auth.logout();
     }
 
-    signupUser(email: string, password: string): firebase.Promise < any > {
+    signupUser(email: string, password: string, username: string): firebase.Promise < any > {
         return firebase.auth().createUserWithEmailAndPassword(email, password).then((newUser) => {
             firebase.database().ref('/users').child(newUser.uid).set({
                 email: email,
                 password: password,
-                provider: 'email'
+                provider: 'email',
+                username: username
             });
         });
     }

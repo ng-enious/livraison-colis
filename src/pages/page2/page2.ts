@@ -156,11 +156,37 @@ export class Page2 {
     }
 
     logoutApp() {
-        this.authData.logoutUser().then(() => {
-            //this.navCtrl.setRoot(LoginPage)
+        // this.authData.logoutUser().then(() => {
+
+        //     this.appCtrl.getRootNav().setRoot(LoginPage);
+        // });
+
+  let alert = this.alertCtrl.create({
+            title: 'Message de confirmation ! ',
+            message: 'Voulez vous vraiment  déconnecter de l application  ?',
+            buttons: [{
+                    text: 'Cancel',
+                    role: 'cancel',
+                    handler: () => {
+                        console.log('Déconnexion  annulée ');
+                    }
+                },
+                {
+                    text: 'Déconnecter ',
+                    handler: () => {
+                     
+                        this.authData.logoutUser().then(() => {
 
             this.appCtrl.getRootNav().setRoot(LoginPage);
         });
+
+
+                    }
+                }
+            ]
+        });
+        alert.present();
+
     }
 
 }

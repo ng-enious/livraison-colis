@@ -65,8 +65,8 @@ export class MesTrajetsPage {
         
 
         let alert = this.alertCtrl.create({
-    title: 'confirmer la suppression ! ',
-    message: 'Voulez vous supprimer ce trajet  ?',
+    title: 'Message de confirmation  ',
+    message: 'Voulez vous vraiment supprimer ce trajet  ?',
     buttons: [
       {
         text: 'Cancel',

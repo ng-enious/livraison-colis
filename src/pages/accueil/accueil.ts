@@ -3,7 +3,7 @@ import { NavController, NavParams  , App } from 'ionic-angular';
 import { AnnonceData } from '../../providers/annonce-data';
 import { TrajetData } from '../../providers/trajet-data';
 import {DemandeData} from '../../providers/demande-data';
-//import { AccueilData } from '../../providers/accueil-data';
+import { RecherchePage } from '../recherche/recherche';
 import firebase from 'firebase';
 @Component({
     selector: 'page-accueil',
@@ -116,6 +116,11 @@ export class AccueilPage {
             user_id: this.currentUser
         });;
 
+    }
+
+    SearchAnnonce(){
+       // console.log("page recherche !")
+                this.navCtrl.push(RecherchePage);
     }
 
 

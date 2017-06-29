@@ -20,7 +20,7 @@ export class ListOfDmdPage {
 
     demandesListF: any;
 
-    demandeList: any;
+    demandeList: any = [];
     missionList: firebase.database.Reference;
 
 
@@ -82,13 +82,10 @@ export class ListOfDmdPage {
     AcceptDmd(demande) {
         console.log(demande.trajet_id);
         this.ajouterMission(demande.trajet_id, this.annonceId).then(() => {
-            this.navCtrl.setRoot(MissionPage, {
-                t: demande.trajet,
-                u: demande.user,
-                dmdId: demande.id,
-                annonce: this.annonceId
+            demande.annonceId =  this.annonceId;
+            this.navCtrl.push(MissionPage, {
+                demande: demande
             });
-
         })
 
     }

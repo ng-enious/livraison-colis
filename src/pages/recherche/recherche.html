@@ -1,0 +1,66 @@
+<ion-header>
+
+ <ion-navbar color="primary">
+    <ion-title>Recherche</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+<ion-searchbar (ionInput)="getItemsAnnonce($event) " >
+    </ion-searchbar>
+  
+    <div *ngIf="variable">
+
+  
+            <ion-card *ngFor="let annonce of annonceList"  >
+                <ion-item>
+                   
+                    <h2>{{annonce?.title}}</h2>
+                  
+                </ion-item>
+                <ion-card-content>
+                    <ion-row>
+                        <p>{{annonce?.description}}</p>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col col-1>
+                            <ion-icon name="arrow-round-forward"></ion-icon>
+                        </ion-col>
+                        <ion-col col-11>
+                            {{annonce?.adresse_dep}}
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col col-1>
+                            <ion-icon name="arrow-round-back"></ion-icon>
+                        </ion-col>
+                        <ion-col col-11>
+                            {{annonce?.adresse_arr}}
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col col-1>
+                            <ion-icon name="time"></ion-icon>
+                        </ion-col>
+                        <ion-col col-11>
+                            {{annonce?.date}}
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col col-1>
+                            <ion-icon name="archive"></ion-icon>
+                        </ion-col>
+                        <ion-col col-11>
+                            {{annonce?.type_obj}}
+                        </ion-col>
+                    </ion-row>
+                </ion-card-content>
+            </ion-card>
+       
+</div>
+
+
+
+</ion-content>

@@ -3,7 +3,7 @@
         <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-        <ion-title> Creation d'une annonce </ion-title>
+        <ion-title> Creer une annonce  </ion-title>
         <ion-buttons end>
         </ion-buttons>
     </ion-navbar>
@@ -43,6 +43,7 @@
     </ion-item>
 
     <button ion-button block (click)="createAnnonce( annonce.id ,   annonce.title , annonce.type_obj , annonce.description , annonce.date , annonce.adresse_dep , annonce.adresse_arr )">
-    
-   <span *ngIf="annonce.id"> Update Annonce</span> <span *ngIf="!annonce.id">Create Annonce  </span> </button>
+    Enregistrer
+   <!--<span *ngIf="annonce.id">  Enregister </span> <span *ngIf="!annonce.id"> Enregistrer  </span> -->
+   </button>
 </ion-content>

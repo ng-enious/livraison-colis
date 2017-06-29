@@ -68,11 +68,9 @@ export class MesAnnoncesPage {
         });
     }
     removeA(annonce) {
-        // this.annonceData.deleteAnnonce(annonce);
-
         let alert = this.alertCtrl.create({
-            title: 'confirmer la suppression ! ',
-            message: 'Voulez vous supprimer cette annonce ?',
+            title: 'Message de confirmation ',
+            message: 'Voulez vous vraiment  supprimer cette annonce ?',
             buttons: [{
                     text: 'Cancel',
                     role: 'cancel',
@@ -83,7 +81,7 @@ export class MesAnnoncesPage {
                 {
                     text: 'supprimer',
                     handler: () => {
-                        // console.log('Buy clicked');
+                     
                         this.annonceData.deleteAnnonce(annonce);
 
                     }

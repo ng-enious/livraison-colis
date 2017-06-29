@@ -1,7 +1,7 @@
 <ion-header>
 
     <ion-navbar color="primary">
-        <ion-title>listOfDmd</ion-title>
+        <ion-title>Demandes</ion-title>
     </ion-navbar>
 
 </ion-header>
@@ -12,12 +12,13 @@
     <ion-list radio-group [(ngModel)]="selecteddemande">
         <ion-item *ngFor="let demande of demandeList">
 
-            <ion-label>Trajet : {{demande.trajet.title}}</ion-label>
+            <ion-label>{{demande.trajet.title}}, {{demande.trajet.price}} dt</ion-label>
             <ion-radio item-left [value]="demande"></ion-radio>
         </ion-item>
     </ion-list>
 
 
-    <button ion-button block (click)="AcceptDmd( selecteddemande)"> Accepter  </button>
+    <button ion-button block (click)="AcceptDmd( selecteddemande)" *ngIf="demandeList.length != 0"> Accepter  </button>
+    <label   *ngIf="demandeList.length == 0" >Aucune demande.</label>
 </ion-content>
  

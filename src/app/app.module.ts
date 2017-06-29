@@ -14,7 +14,7 @@ import { AboutPage  } from '../pages/about/about';
 import { MesTrajetsPage } from '../pages/mes-trajets/mes-trajets';
 import { MesAnnoncesPage } from '../pages/mes-annonces/mes-annonces';
 import { MissionPage } from '../pages/mission/mission'; 
-
+import { RecherchePage } from '../pages/recherche/recherche'; 
 // Importing Providers
 import { AuthData } from '../providers/auth-data';
 import { AnnonceData} from '../providers/annonce-data';
@@ -50,7 +50,7 @@ const myFirebaseAuthConfig = {
         SignupPage,
         TransportPage,
         TrajetPage,
-
+        RecherchePage ,
         AboutPage,
         MesTrajetsPage,
         MesAnnoncesPage,
@@ -79,7 +79,8 @@ const myFirebaseAuthConfig = {
         MesAnnoncesPage,
         TabsPage,
         MissionPage,
-        AccueilPage
+        AccueilPage ,
+        RecherchePage
 
     ],
     providers: [
